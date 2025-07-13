@@ -125,7 +125,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                           "id": "SecondProject_JourneyMakerV1",
                           "name": "JourneyMaker_v1",
                           "projectName": "Second_project",
-                          "projectId": "SecondProject",
+                          "projectId": "SecondProject"
                         }
                       }
                     ]
