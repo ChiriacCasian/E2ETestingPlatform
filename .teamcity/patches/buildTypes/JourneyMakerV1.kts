@@ -81,12 +81,35 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
         update<ScriptBuildStep>(1) {
             clearConditions()
             scriptContent = """
+                #!/usr/bin/env bash
+                producer_bt_id="%teamcity.buildType.id%"
+                producer_build_id="%teamcity.build.id%"
+                
+                echo "This build comes from BT: ${'$'}{producer_bt_id}, buildId: ${'$'}{producer_build_id}"
+                
                 payload=${'$'}(cat <<EOF
                 {
                   "id"        : "SecondProject_Journey_${'$'}{JOURNEY_NAME}",
                   "name"      : "${'$'}{JOURNEY_NAME}",
                   "projectId" : "SecondProject",
-                  "template": { "id": "SecondProject_JourneyExecutorTemplate" }
+                  "template": { "id": "SecondProject_JourneyExecutorTemplate" },
+                  
+                  "dependencies": {
+                    "artifact-dependencies": {
+                      "artifact-dependency": [{
+                        "id" : "AD1",
+                        "properties": {
+                          "property": [
+                            { "name": "buildTypeId",   "value": "${'$'}{producer_bt_id}" },
+                            { "name": "revisionName",  "value": "id" },
+                            { "name": "revisionValue", "value": "${'$'}{producer_build_id}" },
+                            { "name": "pathRules",     "value": "generated/script.sh => script.sh" }
+                          ]
+                        }
+                      }]
+                    }
+                  }
+                
                 }
                 EOF
                 )
