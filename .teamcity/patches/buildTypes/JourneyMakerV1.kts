@@ -78,7 +78,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 REPO_DIR=${'$'}(mktemp -d)
                 
                 # Clone settings repo
-                git clone --depth 1 git@<your-git-server>:teamcity/settings-project-a.git "TeamCityBuildServer"
+                git clone --depth 1 git@github.com:ChiriacCasian/TeamCityBuildServer.git "TeamCityBuildServer"
                 cd "TeamCityBuildServer/.teamcity"
                 
                 # Prepare identifiers
