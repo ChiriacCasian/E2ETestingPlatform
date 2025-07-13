@@ -122,7 +122,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                           "count": 4
                         },
                         "source-buildType": {
-                          "id": "SecondProject_JourneyMakerV1",
+                          "id": "SecondProject_JourneyMakerV1"
                         }
                       }
                     ]
