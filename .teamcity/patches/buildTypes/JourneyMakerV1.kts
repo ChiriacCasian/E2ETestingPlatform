@@ -89,7 +89,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   -d '{
                         "id"      : "Journey_${'$'}{JOURNEY_NAME}",
                         "name"    : "${'$'}{JOURNEY_NAME}",
-                        "projectId" : "_Root",
+                        "projectId" : "SecondProject_JourneyMakerV1",
                         "templateId": "JourneyExecutorTemplate"
                       }'
             """.trimIndent()
