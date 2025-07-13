@@ -87,7 +87,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   -X POST \
                   "localhost:8111/app/rest/buildTypes" \
                   -d '{
-                        "id"      : "Journey_${'$'}{JOURNEY_NAME}",
+                        "id"      : "SecondProject_Journey_${'$'}{JOURNEY_NAME}",
                         "name"    : "${'$'}{JOURNEY_NAME}",
                         "project" : {
                         "id": "SecondProject"
