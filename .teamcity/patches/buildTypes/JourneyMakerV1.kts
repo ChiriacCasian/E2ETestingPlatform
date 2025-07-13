@@ -102,7 +102,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                             },
                             {
                               "name": "pathRules",
-                              "value": "SixthGeneratedBuild5.txt"
+                              "value": "*.txt"
                             },
                             {
                               "name": "revisionName",
