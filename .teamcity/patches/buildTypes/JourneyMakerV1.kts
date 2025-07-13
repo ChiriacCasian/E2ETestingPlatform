@@ -81,12 +81,6 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
         update<ScriptBuildStep>(1) {
             clearConditions()
             scriptContent = """
-                #!/usr/bin/env bash
-                producer_bt_id="%system.build.number%"
-                producer_build_id="%teamcity.build.id%"
-                
-                echo "This build comes from BT: ${'$'}{producer_bt_id}, buildId: ${'$'}{producer_build_id}"
-                
                 payload=${'$'}(cat <<EOF
                 {
                   "id"        : "SecondProject_Journey_${'$'}{JOURNEY_NAME}",
@@ -116,7 +110,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                             },
                             {
                               "name": "revisionValue",
-                              "value": "70"
+                              "value": "%system.build.number%"
                             }
                           ],
                           "count": 4
@@ -127,12 +121,6 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                       }
                     ]
                   }
-                
-                
-                
-                
-                
-                
                 }
                 EOF
                 )
