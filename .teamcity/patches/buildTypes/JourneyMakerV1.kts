@@ -88,7 +88,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   "localhost:8111/app/rest/buildTypes" \
                   -d '{
                         "id"      : "Journey_${'$'}{JOURNEY_NAME}",
-                        "name"    : ${'$'}{JOURNEY_NAME},
+                        "name"    : "${'$'}{JOURNEY_NAME}",
                         "projectId" : "_Root",
                         "templateId": "JourneyExecutorTemplate"
                       }'
