@@ -103,23 +103,15 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                         "properties": {
                           "property": [
                             {
-                              "name": "cleanDestinationDirectory",
-                              "value": "false"
-                            },
-                            {
                               "name": "pathRules",
                               "value": "SixthGeneratedBuild5.txt"
-                            },
-                            {
-                              "name": "revisionName",
-                              "value": "buildNumber"
                             },
                             {
                               "name": "revisionValue",
                               "value": "70"
                             }
                           ],
-                          "count": 4
+                          "count": 2
                         },
                         "source-buildType": {
                           "id": "SecondProject_JourneyMakerV1"
