@@ -85,7 +85,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
                   -H "Content-Type: application/json" \
                   -X POST \
-                  "http://localhost:8111/app/rest/api/v1/buildTypes" \
+                  "localhost:8111/app/rest/buildTypes" \
                   -d "{
                         \"id\"        : \"SecondProject_Journey_${'$'}{JOURNEY_NAME}\",
                         \"name\"      : \"${'$'}{JOURNEY_NAME}\",
