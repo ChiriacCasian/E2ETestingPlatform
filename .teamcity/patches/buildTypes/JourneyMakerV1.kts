@@ -11,6 +11,12 @@ To apply the patch, change the buildType with id = 'JourneyMakerV1'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("JourneyMakerV1")) {
+    params {
+        add {
+            param("FILE_NAME", "JourneyMaker_v1")
+        }
+    }
+
     expectSteps {
         script {
             id = "simpleRunner"
