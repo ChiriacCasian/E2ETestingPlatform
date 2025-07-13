@@ -94,15 +94,14 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   "projectId" : "SecondProject",
                   "template": { "id": "SecondProject_JourneyExecutorTemplate" },
                   
-                    "dependencies": {
-                    "artifact-dependency": [             
+                   "dependencies": {
+                    "artifact-dependency": [
                       {
                         "id"      : "AD1",
+                        "type"    : "artifact_dependency",
                         "enabled" : true,
                 
-                        "source-buildType": {            
-                          "id": "${'$'}{producer_bt_id}"
-                        },
+                        "source-buildType": { "id": "${'$'}{producer_bt_id}" },
                 
                         "properties": {
                           "property": [
@@ -114,6 +113,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                       }
                     ]
                   }
+                
                 
                 
                 
