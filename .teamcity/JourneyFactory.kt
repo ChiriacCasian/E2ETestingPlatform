@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 fun newJourneyBuild(idSuffix: String, journeyName: String): BuildType =
     BuildType {
