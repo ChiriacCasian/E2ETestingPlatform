@@ -1,0 +1,27 @@
+# 1) Produce the Kotlin source file
+cat > "JourneyExecutor_${JOURNEY_NAME}.kt" <<EOF
+import jetbrains.buildServer.configs.kotlin.*
+
+object Journey_${JOURNEY_NAME} : BuildType(
+    templates(JourneyExecutorTemplate)
+)
+EOF
+
+# 2) Base-64-encode it
+b64=$(base64 -w0 "JourneyExecutor_${JOURNEY_NAME}.kt")
+
+# 3) Build the JSON as a shell variable
+read -r -d '' payload <<EOF
+{
+  "message": "Add JourneyExecutor_${JOURNEY_NAME}",
+  "branch":  "main",
+  "content": "${b64}"
+}
+EOF
+
+# 4) PUT the file to GitHub
+curl -X PUT \
+     -H "Authorization: Bearer ${GIT_PAT_TOKEN}" \
+     -H "Content-Type: application/json" \
+     -d "${payload}" \
+     "https://api.github.com/repos/ChiriacCasian/TeamCityBuildServer/contents/.teamcity/JourneyExecutor_${JOURNEY_NAME}.kt"
