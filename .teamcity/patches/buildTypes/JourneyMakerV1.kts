@@ -94,25 +94,29 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   "projectId" : "SecondProject",
                   "template": { "id": "SecondProject_JourneyExecutorTemplate" },
                   
-                   "dependencies": {
+                    "dependencies": {
                     "artifact-dependency": [
                       {
-                        "id"      : "AD1",
+                        "id"      : "fl_dep_master_build_fullLine",
                         "type"    : "artifact_dependency",
                         "enabled" : true,
                 
-                        "source-buildType": { "id": "${'$'}{producer_bt_id}" },
+                        "source-buildType": {
+                          "id": "${'$'}{producer_bt_id}"
+                        },
                 
                         "properties": {
                           "property": [
-                            { "name": "pathRules",     "value": "generated/script.sh => script.sh" },
-                            { "name": "revisionName",  "value": "id" },
-                            { "name": "revisionValue", "value": "${'$'}{producer_build_id}" }
+                            { "name": "cleanDestinationDirectory", "value": "true" },
+                            { "name": "pathRules",                 "value": "fullLine-*.zip => distributions" },
+                            { "name": "revisionName",              "value": "lastSuccessful" },
+                            { "name": "revisionValue",             "value": "latest.lastSuccessful" }
                           ]
                         }
                       }
                     ]
                   }
+                
                 
                 
                 
