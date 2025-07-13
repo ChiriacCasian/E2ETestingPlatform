@@ -126,8 +126,6 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                           "name": "JourneyMaker_v1",
                           "projectName": "Second_project",
                           "projectId": "SecondProject",
-                          "href": "/app/rest/buildTypes/id:SecondProject_JourneyMakerV1",
-                          "webUrl": "http://localhost:8111/buildConfiguration/SecondProject_JourneyMakerV1?mode=builds"
                         }
                       }
                     ]
