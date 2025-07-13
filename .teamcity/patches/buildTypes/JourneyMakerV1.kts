@@ -81,19 +81,17 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
         update<ScriptBuildStep>(1) {
             clearConditions()
             scriptContent = """
-                curl -i \
+                curl -i -sS \
                   -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
                   -H "Content-Type: application/json" \
                   -X POST \
-                  "localhost:8111/app/rest/buildTypes" \
-                  -d '{
-                        "id"      : "SecondProject_Journey_${'$'}{JOURNEY_NAME}",
-                        "name"    : "${'$'}{JOURNEY_NAME}",
-                        "project" : {
-                        "id": "SecondProject"
-                    	},
-                        "templateId": "JourneyExecutorTemplate"
-                      }'
+                  "http://localhost:8111/app/rest/api/v1/buildTypes" \
+                  -d "{
+                        \"id\"        : \"SecondProject_Journey_${'$'}{JOURNEY_NAME}\",
+                        \"name\"      : \"${'$'}{JOURNEY_NAME}\",
+                        \"projectId\" : \"SecondProject\",
+                        \"templateId\": \"SecondProject_JourneyExecutorTemplate\"
+                      }"
             """.trimIndent()
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
