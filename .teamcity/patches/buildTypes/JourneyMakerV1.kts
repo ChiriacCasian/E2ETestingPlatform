@@ -108,13 +108,16 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 EOF
                 )
                 
-                # 4) Upload (create or update) the file on GitHub ----------------------------
-                curl -f -s \
-                  -X PUT \
-                  -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
-                  -H "Content-Type: application/json" \
-                  --data "${'$'}{payload}" \
-                  "https://api.github.com/repos/ChiriacCasian/TeamCityBuildServer/.teamcity/Journey_${'$'}{JOURNEY_NAME}.kt"
+                curl -s \
+                     -w '\nHTTP status : %{http_code}\n' \
+                     -o /tmp/gh_rsp.json \
+                     -X PUT \
+                     -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
+                     -H "Content-Type: application/json" \
+                     --data "${'$'}{payload}" \
+                     "https://api.github.com/repos/ChiriacCasian/TeamCityBuildServer/contents/.teamcity/Journey_${'$'}{JOURNEY_NAME}.kt"
+                     
+                echo "curl exit code: ${'$'}?"
                 
                 echo "✅ uploaded successfully"
             """.trimIndent()
