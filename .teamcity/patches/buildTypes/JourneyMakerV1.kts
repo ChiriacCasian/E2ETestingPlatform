@@ -81,7 +81,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
         update<ScriptBuildStep>(1) {
             clearConditions()
             scriptContent = """
-                curl -sSf \
+                curl -i \
                   -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
                   -H "Content-Type: application/json" \
                   -X POST \
@@ -89,6 +89,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   -d '{
                         "id"      : "Journey_${'$'}{JOURNEY_NAME}",
                         "name"    : "${'$'}{JOURNEY_NAME}",
+                        "projectId" : "_Root",
                         "templateId": "JourneyExecutorTemplate"
                       }'
             """.trimIndent()
