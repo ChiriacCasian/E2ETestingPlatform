@@ -94,24 +94,40 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   "projectId" : "SecondProject",
                   "template": { "id": "SecondProject_JourneyExecutorTemplate" },
                   
-                    "dependencies": {
+                	"artifact-dependencies": {
+                    "count": 1,
                     "artifact-dependency": [
                       {
-                        "id"      : "fl_dep_master_build_fullLine",
-                        "type"    : "artifact_dependency",
-                        "enabled" : true,
-                
-                        "source-buildType": {
-                          "id": "${'$'}{producer_bt_id}"
-                        },
-                
+                        "id": "ARTIFACT_DEPENDENCY_2",
+                        "type": "artifact_dependency",
                         "properties": {
                           "property": [
-                            { "name": "cleanDestinationDirectory", "value": "true" },
-                            { "name": "pathRules",                 "value": "fullLine-*.zip => distributions" },
-                            { "name": "revisionName",              "value": "lastSuccessful" },
-                            { "name": "revisionValue",             "value": "latest.lastSuccessful" }
-                          ]
+                            {
+                              "name": "cleanDestinationDirectory",
+                              "value": "false"
+                            },
+                            {
+                              "name": "pathRules",
+                              "value": "SixthGeneratedBuild5.txt"
+                            },
+                            {
+                              "name": "revisionName",
+                              "value": "buildNumber"
+                            },
+                            {
+                              "name": "revisionValue",
+                              "value": "70"
+                            }
+                          ],
+                          "count": 4
+                        },
+                        "source-buildType": {
+                          "id": "SecondProject_JourneyMakerV1",
+                          "name": "JourneyMaker_v1",
+                          "projectName": "Second_project",
+                          "projectId": "SecondProject",
+                          "href": "/app/rest/buildTypes/id:SecondProject_JourneyMakerV1",
+                          "webUrl": "http://localhost:8111/buildConfiguration/SecondProject_JourneyMakerV1?mode=builds"
                         }
                       }
                     ]
