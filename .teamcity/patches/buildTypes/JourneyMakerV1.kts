@@ -114,7 +114,6 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                       }
                     ]
                   }
-                }
                 
                 
                 
