@@ -82,7 +82,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
             clearConditions()
             scriptContent = """
                 #!/usr/bin/env bash
-                producer_bt_id="%teamcity.buildType.id%"
+                producer_bt_id="%system.teamcity.buildType.id%"
                 producer_build_id="%teamcity.build.id%"
                 
                 echo "This build comes from BT: ${'$'}{producer_bt_id}, buildId: ${'$'}{producer_build_id}"
