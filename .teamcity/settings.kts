@@ -35,43 +35,6 @@ project {
     template(JourneyTemplate)
 }
 
-object JourneyMakerV1 : BuildType({
-    name = "JourneyMaker_v1"
-
-    artifactRules = "%env.JOURNEY_NAME%.txt"
-
-    params {
-        param("JOURNEY_SCRIPT", "")
-        param("env.JOURNEY_NAME", "DEFAULT NAME")
-    }
-
-    steps {
-        script {
-            id = "simpleRunner"
-            scriptContent = """
-                #!/usr/bin/env bash
-                set -euo pipefail
-                
-                # ------------------------------------------------------------------
-                # 1. Compose the target file name
-                #    JOURNEY_NAME should be defined as an Environment / System
-                #    parameter so it is available as ${'$'}JOURNEY_NAME
-                # ------------------------------------------------------------------
-                FILE_NAME="${'$'}{JOURNEY_NAME}.txt"
-                
-                # ------------------------------------------------------------------
-                # 2. Write the parameter value into the file
-                #    %JOURNEY_SCRIPT% is substituted by TeamCity → becomes a literal
-                #    string inside the here-document, preserving line breaks.
-                # ------------------------------------------------------------------
-                cat > "${'$'}{FILE_NAME}" <<'EOF'
-                %JOURNEY_SCRIPT%
-                EOF
-            """.trimIndent()
-        }
-    }
-})
-
 
 object HttpsGithubComChiriacCasianTCBuildServerGit : GitVcsRoot({
     name = "https://github.com/ChiriacCasian/TCBuildServer.git"
