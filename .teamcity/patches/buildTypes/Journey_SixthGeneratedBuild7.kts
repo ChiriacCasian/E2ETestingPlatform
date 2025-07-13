@@ -13,5 +13,13 @@ create(DslContext.projectId, BuildType({
     templates(RelativeId("JourneyExecutorTemplate"))
     id("Journey_SixthGeneratedBuild7")
     name = "SixthGeneratedBuild7"
+
+    dependencies {
+        artifacts(RelativeId("JourneyMakerV1")) {
+            id = "ARTIFACT_DEPENDENCY_2"
+            buildRule = build("70")
+            artifactRules = "SixthGeneratedBuild5.txt"
+        }
+    }
 }))
 
