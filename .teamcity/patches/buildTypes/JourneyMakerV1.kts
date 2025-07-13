@@ -81,42 +81,17 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
         update<ScriptBuildStep>(1) {
             clearConditions()
             scriptContent = """
-                #!/usr/bin/env bash
-                set -euo pipefail
-                
-                # 1) Write the exact Kotlin source you supplied ------------------------------
-                cat > "Journey.kt" <<'EOF'
-                import jetbrains.buildServer.configs.kotlin.*
-                
-                object Journey_%env.JOURNEY_NAME% : BuildType({
-                    name = "%env.JOURNEY_NAME%"
-                
-                    templates(JourneyExecutorTemplate)
-                })
-                EOF
-                
-                # 2) Base-64-encode it as one line (portable between Linux/macOS) ------------
-                b64=${'$'}(base64 < Journey.kt | tr -d '\n')
-                
-                # 3) Build the JSON request ---------------------------------------------------
-                payload=${'$'}(cat <<EOF
-                {
-                  "message": "Add Journey_${'$'}{JOURNEY_NAME}.kt",
-                  "branch": "main",
-                  "content": "${'$'}{b64}"
-                }
-                EOF
-                )
-                
-                # 4) Upload (create or update) the file on GitHub ----------------------------
-                curl -f -s \
-                -X PUT \
-                -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
-                -H "Content-Type: application/json" \
-                --data "${'$'}{payload}" \
-                "https://api.github.com/repos/ChiriacCasian/TeamCityBuildServer/contents/.teamcity/Journey_${'$'}{JOURNEY_NAME}.kt"
-                
-                echo "✅ uploaded successfully"
+                curl -sSf \
+                  -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
+                  -H "Content-Type: application/json" \
+                  -X POST \
+                  "http://localhost:8111/api/v1/buildTypes" \
+                  -d '{
+                        "id"      : "Journey_${'$'}{JOURNEY_NAME}",
+                        "name"    : ${'$'}{JOURNEY_NAME},
+                        "projectId" : "_Root",
+                        "templateId": "JourneyExecutorTemplate"
+                      }'
             """.trimIndent()
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
