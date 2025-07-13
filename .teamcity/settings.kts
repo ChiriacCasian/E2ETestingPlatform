@@ -31,6 +31,8 @@ project {
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
 
     buildType(JourneyMakerV1)
+
+    template(JourneyTemplate)
 }
 
 object JourneyMakerV1 : BuildType({
@@ -69,6 +71,25 @@ object JourneyMakerV1 : BuildType({
         }
     }
 })
+
+object JourneyTemplate : Template({
+    name = "RunJourneyTemplate"
+
+    params {
+        param("journeyName", "not-set-in-template")
+    }
+
+    steps {
+        script {
+            name = "Run Journey"
+            scriptContent = """
+                echo "Running journey: %journeyName%"
+                # example: call Playwright / Cypress / etc.
+            """.trimIndent()
+        }
+    }
+})
+
 
 object HttpsGithubComChiriacCasianTCBuildServerGit : GitVcsRoot({
     name = "https://github.com/ChiriacCasian/TCBuildServer.git"
