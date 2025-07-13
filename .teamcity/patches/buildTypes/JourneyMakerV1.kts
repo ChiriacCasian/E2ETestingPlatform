@@ -88,8 +88,8 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 cat > "Journey.kt" <<'EOF'
                 import jetbrains.buildServer.configs.kotlin.*
                 
-                object Journey_%JOURNEY_NAME% : BuildType({
-                    name = "%JOURNEY_NAME%"
+                object Journey_%env.JOURNEY_NAME% : BuildType({
+                    name = "%env.JOURNEY_NAME%"
                 
                     templates(JourneyExecutorTemplate)
                 })
