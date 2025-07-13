@@ -86,7 +86,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   "id"        : "SecondProject_Journey_${'$'}{JOURNEY_NAME}",
                   "name"      : "${'$'}{JOURNEY_NAME}",
                   "projectId" : "SecondProject",
-                  "templateId": "SecondProject_JourneyExecutorTemplate"
+                  "template": { "id": "SecondProject_JourneyExecutorTemplate" }
                 }
                 EOF
                 )
