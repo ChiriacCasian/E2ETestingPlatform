@@ -96,19 +96,24 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   
                   "dependencies": {
                     "artifact-dependencies": {
-                      "artifact-dependency": [{
-                        "id" : "AD1",
-                        "properties": {
-                          "property": [
-                            { "name": "buildTypeId",   "value": "${'$'}{producer_bt_id}" },
-                            { "name": "revisionName",  "value": "id" },
-                            { "name": "revisionValue", "value": "${'$'}{producer_build_id}" },
-                            { "name": "pathRules",     "value": "generated/script.sh => script.sh" }
-                          ]
+                      "artifact-dependency": [
+                        {
+                          "id"      : "AD1",
+                          "type"    : "artifact_dependency",
+                          "enabled" : true,
+                          "properties": {
+                            "property": [
+                              { "name": "buildTypeId",   "value": "${'$'}{producer_bt_id}" },
+                              { "name": "revisionName",  "value": "id"               },
+                              { "name": "revisionValue", "value": "${'$'}{producer_build_id}" },
+                              { "name": "pathRules",     "value": "generated/script.sh => script.sh" }
+                            ]
+                          }
                         }
-                      }]
+                      ]
                     }
                   }
+                
                 
                 }
                 EOF
