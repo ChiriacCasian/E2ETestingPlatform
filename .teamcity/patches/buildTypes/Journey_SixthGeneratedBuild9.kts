@@ -29,7 +29,7 @@ create(DslContext.projectId, BuildType({
         script {
             name = "Run Journey"
             id = "TEMPLATE_RUNNER_1"
-            scriptContent = "wget -O dataset-ansible_ansible-478806e668ec5df9b2d4971cc3c4e8425b33867d.zip https://github.com/ansible/ansible/archive/478806e668ec5df9b2d4971cc3c4e8425b33867d.zip"
+            scriptContent = "wget -O insights.csv https://docs.google.com/spreadsheets/d/1LulJOTbB5QM-iuonbwT02Ldou5knjVE3_pPn_QWi6Gs/export?format=csv&gid=0"
         }
         script {
             name = "Save Report"
