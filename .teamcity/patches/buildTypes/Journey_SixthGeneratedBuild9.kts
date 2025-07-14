@@ -25,6 +25,11 @@ create(DslContext.projectId, BuildType({
             id = "TEMPLATE_RUNNER_1"
             scriptContent = "wget -O dataset-ansible_ansible-478806e668ec5df9b2d4971cc3c4e8425b33867d.zip https://github.com/ansible/ansible/archive/478806e668ec5df9b2d4971cc3c4e8425b33867d.zip"
         }
+        script {
+            name = "Save Report"
+            id = "TEMPLATE_RUNNER_2"
+            scriptContent = "ls -alR > folder_tree-after-download.log"
+        }
     }
 
     dependencies {
