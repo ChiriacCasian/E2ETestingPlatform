@@ -15,11 +15,7 @@ create(DslContext.projectId, BuildType({
     id("Journey_SixthGeneratedBuild9")
     name = "SixthGeneratedBuild9"
 
-    artifactRules = """
-        dataset-ansible_ansible-478806e668ec5df9b2d4971cc3c4e8425b33867d.zip
-        +:folder_tree-after-download.log
-        configs/*
-    """.trimIndent()
+    artifactRules = "insights.csv"
 
     params {
         param("journeyName", "ceva")
