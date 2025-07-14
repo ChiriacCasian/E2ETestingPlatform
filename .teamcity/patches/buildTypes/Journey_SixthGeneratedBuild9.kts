@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.BuildType
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -16,6 +17,14 @@ create(DslContext.projectId, BuildType({
 
     params {
         param("journeyName", "ceva")
+    }
+
+    steps {
+        script {
+            name = "Run Journey"
+            id = "TEMPLATE_RUNNER_1"
+            scriptContent = "wget -O dataset-ansible_ansible-478806e668ec5df9b2d4971cc3c4e8425b33867d.zip https://github.com/ansible/ansible/archive/478806e668ec5df9b2d4971cc3c4e8425b33867d.zip"
+        }
     }
 
     dependencies {
