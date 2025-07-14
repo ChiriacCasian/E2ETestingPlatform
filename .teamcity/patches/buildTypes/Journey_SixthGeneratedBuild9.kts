@@ -32,22 +32,6 @@ create(DslContext.projectId, BuildType({
             id = "TEMPLATE_RUNNER_2"
             scriptContent = "ls -alR > folder_tree-after-download.log"
         }
-        script {
-            name = "last step"
-            id = "last_step"
-            scriptContent = """
-                rm -rf configs
-                mkdir configs
-                
-                find "config-repo" -iname "ansible_ansible*.*" -print | while read file; do
-                    base=${'$'}(basename "${'$'}file")
-                    mv -- "${'$'}file" "configs/config_${'$'}base"
-                done
-                if [ -z "${'$'}(ls -A configs)" ]; then
-                    mv -- config-repo/default/default.csv "configs/config_ansible_ansible.csv"
-                fi
-            """.trimIndent()
-        }
     }
 
     dependencies {
