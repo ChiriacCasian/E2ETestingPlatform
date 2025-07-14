@@ -25,7 +25,7 @@ create(DslContext.projectId, BuildType({
         script {
             name = "Run Journey"
             id = "TEMPLATE_RUNNER_1"
-            scriptContent = "wget -O insights.csv 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSk39A_ZgQ0pofEIvYgrNdq6p9-wZ3kwWoHcMx5ln6D9MpTpY919y412D14BRNLHRVDXZ-YMug2WHWE/pub?output=csv'"
+            scriptContent = "wget -O insights2.csv https://docs.google.com/spreadsheets/d/e/2PACX-1vSk39A_ZgQ0pofEIvYgrNdq6p9-wZ3kwWoHcMx5ln6D9MpTpY919y412D14BRNLHRVDXZ-YMug2WHWE/pub?output=csv"
         }
         script {
             name = "Save Report"
