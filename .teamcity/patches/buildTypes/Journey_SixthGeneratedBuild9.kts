@@ -32,6 +32,21 @@ create(DslContext.projectId, BuildType({
             id = "TEMPLATE_RUNNER_2"
             scriptContent = "ls -alR > folder_tree-after-download.log"
         }
+        script {
+            id = "simpleRunner"
+            scriptContent = """
+                rm -rf configs
+                mkdir configs
+                
+                find "config-repo" -iname "javagroundtruthinsights*.*" -print | while read file; do
+                    base=${'$'}(basename "${'$'}file")
+                    mv -- "${'$'}file" "configs/config_${'$'}base"
+                done
+                if [ -z "${'$'}(ls -A configs)" ]; then
+                    mv -- config-repo/default/default.csv "configs/config_javagroundtruthinsights.csv"
+                fi
+            """.trimIndent()
+        }
     }
 
     dependencies {
