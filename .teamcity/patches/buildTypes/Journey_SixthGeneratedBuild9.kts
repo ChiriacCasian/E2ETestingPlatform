@@ -25,7 +25,7 @@ create(DslContext.projectId, BuildType({
         script {
             name = "Run Journey"
             id = "TEMPLATE_RUNNER_1"
-            scriptContent = "wget https://docs.google.com/spreadsheets/d/1LulJOTbB5QM-iuonbwT02Ldou5knjVE3_pPn_QWi6Gs/export?format=csv&gid=0"
+            scriptContent = "wget 'https://docs.google.com/spreadsheets/d/1LulJOTbB5QM-iuonbwT02Ldou5knjVE3_pPn_QWi6Gs/export?format=csv&gid=0'"
         }
         script {
             name = "Save Report"
