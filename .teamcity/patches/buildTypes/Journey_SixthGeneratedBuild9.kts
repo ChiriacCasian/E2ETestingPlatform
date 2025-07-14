@@ -30,6 +30,7 @@ create(DslContext.projectId, BuildType({
         script {
             name = "Save Report"
             id = "TEMPLATE_RUNNER_2"
+            enabled = false
             scriptContent = "ls -alR > folder_tree-after-download.log"
         }
     }
