@@ -39,6 +39,7 @@ create(DslContext.projectId, BuildType({
         }
         script {
             id = "simpleRunner"
+            enabled = false
             scriptContent = """
                 rm -rf configs
                 mkdir configs
