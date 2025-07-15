@@ -17,7 +17,7 @@ create(DslContext.projectId, BuildType({
 
     artifactRules = """
         *.csv
-        SixthGeneratedBuild13.txt
+        SixthGeneratedBuild5.txt
     """.trimIndent()
 
     params {
