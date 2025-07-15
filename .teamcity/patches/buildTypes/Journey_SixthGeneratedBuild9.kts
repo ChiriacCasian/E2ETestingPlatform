@@ -15,7 +15,10 @@ create(DslContext.projectId, BuildType({
     id("Journey_SixthGeneratedBuild9")
     name = "SixthGeneratedBuild9"
 
-    artifactRules = "*.csv"
+    artifactRules = """
+        *.csv
+        SixthGeneratedBuild13.txt
+    """.trimIndent()
 
     params {
         param("journeyName", "ceva")
