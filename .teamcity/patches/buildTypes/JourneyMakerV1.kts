@@ -11,6 +11,14 @@ To apply the patch, change the buildType with id = 'JourneyMakerV1'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("JourneyMakerV1")) {
+    check(artifactRules == "%env.JOURNEY_NAME%.txt") {
+        "Unexpected option value: artifactRules = $artifactRules"
+    }
+    artifactRules = """
+        %env.JOURNEY_NAME%.txt
+        +:**/*
+    """.trimIndent()
+
     expectSteps {
         script {
             id = "simpleRunner"
