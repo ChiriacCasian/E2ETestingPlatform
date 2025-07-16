@@ -47,7 +47,7 @@ create(DslContext.projectId, BuildType({
                 # Call the endpoint — adjust URL / headers to match your service
                 curl -sSf -X POST \
                   -H "Content-Type: application/json" \
-                  "http://localhost:8060/runWebJourney/${'$'}abs_path/WEB"
+                  "http://localhost:8060/runJourney/${'$'}abs_path/WEB"
                 
                 echo "runJourney invoked successfully."
             """.trimIndent()
