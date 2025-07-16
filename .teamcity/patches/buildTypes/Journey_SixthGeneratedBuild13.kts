@@ -46,7 +46,7 @@ create(DslContext.projectId, BuildType({
                 
                 # Call the endpoint — adjust URL / headers to match your service
                 curl -X POST \
-                     --data-urlencode "scriptPath=/opt/agent/work/abc123/scripts/Build42.txt" \
+                     --data-urlencode "scriptPath=${'$'}abs_path" \
                      --data-urlencode "type=WEB" \
                      http://localhost:8060/runJourney
                 
