@@ -308,10 +308,4 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
             }
         }
     }
-
-    requirements {
-        add {
-            equals("teamcity.agent.pool.name", "Default")
-        }
-    }
 }
