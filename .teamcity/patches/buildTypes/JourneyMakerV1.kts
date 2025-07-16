@@ -21,6 +21,9 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
     """.trimIndent()
 
     params {
+        remove {
+            param("JOURNEY_SCRIPT", "")
+        }
         add {
             param("env.AGENTS_POOL", "Default")
         }
