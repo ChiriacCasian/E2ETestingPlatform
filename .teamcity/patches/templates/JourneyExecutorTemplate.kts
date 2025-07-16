@@ -1,6 +1,7 @@
 package patches.templates
 
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.ui.*
 
@@ -29,6 +30,35 @@ changeTemplate(RelativeId("JourneyExecutorTemplate")) {
         }
     }
     steps {
+        update<ScriptBuildStep>(0) {
+            id = "TEMPLATE_RUNNER_1"
+            clearConditions()
+            scriptContent = """
+                #!/usr/bin/env bash
+                set -euo pipefail
+                shopt -s nullglob          # ignore the glob if the file is missing
+                
+                ART_DIR="./scripts"
+                
+                # Expect exactly one .txt file in ART_DIR
+                txt_files=("${'$'}ART_DIR"/*14.txt)
+                if [[ ${'$'}{#txt_files[@]} -ne 1 ]]; then
+                  echo "Error: expected exactly one .txt file in ${'$'}ART_DIR, found ${'$'}{#txt_files[@]}." >&2
+                  exit 1
+                fi
+                
+                # Absolute path (realpath first, fallback to readlink -f)
+                abs_path="${'$'}{'${'$'}'}(realpath "${'$'}{txt_files[0]}" 2>/dev/null || readlink -f "${'$'}{txt_files[0]}")"
+                echo "Script found: ${'$'}abs_path"
+                
+                # Call the endpoint — adjust URL / headers to match your service
+                curl -X POST \
+                     --data-urlencode "scriptPath=${'$'}abs_path" \
+                     --data-urlencode "type=WEB" \
+                     http://localhost:8060/runJourney
+            """.trimIndent()
+            param("teamcity.kubernetes.executor.pull.policy", "")
+        }
         items.removeAt(1)
     }
 }
