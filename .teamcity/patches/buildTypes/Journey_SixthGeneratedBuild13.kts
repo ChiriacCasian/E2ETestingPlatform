@@ -26,6 +26,7 @@ create(DslContext.projectId, BuildType({
             name = "Run Journey"
             id = "TEMPLATE_RUNNER_1"
             scriptContent = """
+                #!/usr/bin/env bash
                 set -euo pipefail
                 
                 ART_DIR="${'$'}TEAMCITY_BUILD_CHECKOUT_DIR/scripts"   # env var is always set by TC
