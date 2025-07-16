@@ -52,30 +52,7 @@ object JourneyExecutorTemplate : Template({
     steps {
         script {
             name = "Run Journey"
-            scriptContent = """
-                #!/usr/bin/env bash
-set -euo pipefail
-shopt -s nullglob          # ignore the glob if the file is missing
-
-ART_DIR="./scripts"
-
-# Expect exactly one .txt file in ART_DIR
-txt_files=("$ART_DIR"/*14.txt)
-if [[ ${#txt_files[@]} -ne 1 ]]; then
-  echo "Error: expected exactly one .txt file in $ART_DIR, found ${#txt_files[@]}." >&2
-  exit 1
-fi
-
-# Absolute path (realpath first, fallback to readlink -f)
-abs_path="${'$'}(realpath "${txt_files[0]}" 2>/dev/null || readlink -f "${txt_files[0]}")"
-echo "Script found: $abs_path"
-
-# Call the endpoint — adjust URL / headers to match your service
-curl -X POST \
-     --data-urlencode "scriptPath=$abs_path" \
-     --data-urlencode "type=WEB" \
-     http://localhost:8060/runJourney
-            """.trimIndent()
+            scriptContent = File("JourneyExecutorStep.txt").readText().trimIndent()
         }
     }
 })
