@@ -29,7 +29,7 @@ create(DslContext.projectId, BuildType({
                 #!/usr/bin/env bash
                 set -euo pipefail
                 
-                ART_DIR="${'$'}TEAMCITY_BUILD_CHECKOUTDIR/scripts"   # env var is always set by TC
+                ART_DIR="./scripts"   # env var is always set by TC
                 
                 echo "Artifacts present in: ${'$'}ART_DIR"
                 shopt -s nullglob                              # avoid the literal *.txt when none
