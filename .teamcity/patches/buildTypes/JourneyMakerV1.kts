@@ -146,7 +146,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
 
     requirements {
         add {
-            exists("env.DEVICE_UUID")
+            exists("env.HOMEBREW_CELLAR")
         }
     }
 }
