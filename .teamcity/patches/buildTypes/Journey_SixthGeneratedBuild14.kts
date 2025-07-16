@@ -47,9 +47,6 @@ create(DslContext.projectId, BuildType({
                      --data-urlencode "scriptPath=${'$'}abs_path" \
                      --data-urlencode "type=WEB" \
                      http://localhost:8060/runJourney
-                
-                
-                echo "runJourney invoked successfully."
             """.trimIndent()
         }
     }
