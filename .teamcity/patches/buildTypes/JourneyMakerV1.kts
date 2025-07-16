@@ -104,7 +104,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 #    %JOURNEY_SCRIPT% is substituted by TeamCity → becomes a literal
                 #    string inside the here-document, preserving line breaks.
                 # ------------------------------------------------------------------
-                cat > "${'$'}{FILE_NAME}" <<'EOF'
+                cat > "${'$'}{FILE_NAME}" <<'PY'
                 import inspect
                 import json
                 import os
@@ -230,7 +230,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 step_playwright(lambda: (page.get_by_role("button", name="/5").click()))
                 close_playwright()
                 save_playwright_report()
-                EOF
+                PY
             """.trimIndent()
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
