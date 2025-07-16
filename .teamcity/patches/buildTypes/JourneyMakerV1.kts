@@ -292,7 +292,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                             },
                             {
                               "name": "property-value",
-                              "value": "${'$'}{JOURNEY_TYPE}"
+                              "value": "%JOURNEY_TYPE%"
                             }
                           ],
                           "count": 2
