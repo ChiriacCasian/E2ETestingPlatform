@@ -1,6 +1,7 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.ui.*
@@ -289,6 +290,13 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                   -d "${'$'}{payload}"
             """.trimIndent()
             param("teamcity.kubernetes.executor.pull.policy", "")
+        }
+    }
+
+    features {
+        add {
+            swabra {
+            }
         }
     }
 
