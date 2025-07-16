@@ -37,7 +37,7 @@ create(DslContext.projectId, BuildType({
                 fi
                 
                 # Absolute path (realpath first, fallback to readlink -f)
-                abs_path="${'$'}{'${'$'}'}(realpath "${'$'}{txt_files[0]}" 2>/dev/null || readlink -f "${'$'}{txt_files[0]}")"
+                abs_path="${'$'}(realpath "${'$'}{txt_files[0]}" 2>/dev/null || readlink -f "${'$'}{txt_files[0]}")"
                 echo "Script found: ${'$'}abs_path"
                 
                 # Call the endpoint — adjust URL / headers to match your service
