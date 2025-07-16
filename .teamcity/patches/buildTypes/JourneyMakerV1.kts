@@ -275,17 +275,31 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                       }
                     ]
                   },
+                 
                   
-                  	"requirements": {
+                  
+                  	"agent-requirements": {
                     "count": 1,
-                    "requirement": [
+                    "agent-requirement": [
                       {
-                        "type"     : "contains",
-                        "property" : "env.COMPATIBLE_JOURNEY_TYPES",
-                        "value"    : "${'$'}{JOURNEY_TYPE}"
+                        "id": "RQ_6",
+                        "type": "contains",
+                        "properties": {
+                          "property": [
+                            {
+                              "name": "property-name",
+                              "value": "env.COMPATIBLE_JOURNEY_TYPES"
+                            },
+                            {
+                              "name": "property-value",
+                              "value": "${'$'}{JOURNEY_TYPE}"
+                            }
+                          ],
+                          "count": 2
+                        }
                       }
                     ]
-                  	}
+                  }
                 
                 
                 }
