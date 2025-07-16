@@ -277,6 +277,18 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                       }
                     ]
                   }
+                  
+                  	"requirements": {
+                    "count": 1,
+                    "requirement": [
+                      {
+                        "type"     : "equals",
+                        "property" : "teamcity.agent.pool.name",
+                        "value"    : "${'$'}{AGENTS_POOL}"
+                      }
+                    ]
+                  }
+                
                 }
                 EOF
                 )
