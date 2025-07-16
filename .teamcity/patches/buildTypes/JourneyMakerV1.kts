@@ -308,4 +308,10 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
             }
         }
     }
+
+    requirements {
+        add {
+            doesNotExist("env.AGENT_NAME")
+        }
+    }
 }
