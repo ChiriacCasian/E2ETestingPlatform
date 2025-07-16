@@ -279,8 +279,24 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                     ]
                   },
                  
-                  
-                  
+                 "features": {
+                    "count": 1,
+                    "feature": [
+                      {
+                        "id": "swabra",
+                        "type": "swabra",
+                        "properties": {
+                          "property": [
+                            {
+                              "name": "swabra.enabled",
+                              "value": "swabra.before.build"
+                            }
+                          ],
+                          "count": 1
+                        }
+                      }
+                    ]
+                  },
                   	"agent-requirements": {
                     "count": 1,
                     "agent-requirement": [
