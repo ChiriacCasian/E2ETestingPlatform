@@ -311,7 +311,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
 
     requirements {
         add {
-            equals("env.POOL_ID", "1")
+            equals("env.POOL_ID", "0")
         }
     }
 }
