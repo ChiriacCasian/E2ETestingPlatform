@@ -30,12 +30,14 @@ create(DslContext.projectId, BuildType({
                 #!/usr/bin/env bash
                 set -euo pipefail
                 
-                ART_DIR="./scripts"   # env var is always set by TC
+                ART_DIR="./scripts"
+                shopt -s nullglob                                # avoid literal *.txt when none
                 
                 echo "Artifacts present in: ${'$'}ART_DIR"
-                shopt -s nullglob                              # avoid the literal *.txt when none
                 for f in "${'$'}ART_DIR"/*.txt; do
-                  echo " - ${'$'}(basename "${'$'}f")"
+                  # Obtain absolute path (works on most Linux & macOS agents)
+                  abs_path="${'$'}(realpath "${'$'}f" 2>/dev/null || readlink -f "${'$'}f")"
+                  echo " - ${'$'}(basename "${'$'}f")   →   ${'$'}abs_path"
                 done
             """.trimIndent()
         }
