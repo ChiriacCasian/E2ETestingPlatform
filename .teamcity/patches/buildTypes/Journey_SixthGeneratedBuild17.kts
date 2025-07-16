@@ -14,6 +14,10 @@ create(DslContext.projectId, BuildType({
     id("Journey_SixthGeneratedBuild17")
     name = "SixthGeneratedBuild17"
 
+    params {
+        param("journeyName", "vrbs")
+    }
+
     dependencies {
         artifacts(RelativeId("JourneyMakerV1")) {
             id = "ARTIFACT_DEPENDENCY_11"
