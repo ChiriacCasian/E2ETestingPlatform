@@ -14,6 +14,10 @@ create(DslContext.projectId, BuildType({
     id("Journey_SixthGeneratedBuild19")
     name = "SixthGeneratedBuild19"
 
+    params {
+        param("journeyName", "ceva")
+    }
+
     dependencies {
         artifacts(RelativeId("JourneyMakerV1")) {
             id = "ARTIFACT_DEPENDENCY_13"
