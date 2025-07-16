@@ -38,7 +38,7 @@ changeTemplate(RelativeId("JourneyExecutorTemplate")) {
                 set -euo pipefail
                 shopt -s nullglob          # ignore the glob if the file is missing
                 
-                ART_DIR="./scripts"
+                ART_DIR="./script"
                 
                 # Expect exactly one .txt file in ART_DIR
                 txt_files=("${'$'}ART_DIR"/*14.txt)
