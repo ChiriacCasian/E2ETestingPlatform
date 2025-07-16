@@ -311,7 +311,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
 
     requirements {
         add {
-            equals("teamcity.agent.pool.name", "3")
+            equals("teamcity.agent.pool.name", "Default")
         }
     }
 }
