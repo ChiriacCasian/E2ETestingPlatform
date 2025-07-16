@@ -314,7 +314,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
             exists("env.HOMEBREW_CELLAR")
         }
         add {
-            equals("AgentPoolRequirement", "Journey Generators Pool")
+            equals("env.POOL_ID", "1")
         }
     }
 }
