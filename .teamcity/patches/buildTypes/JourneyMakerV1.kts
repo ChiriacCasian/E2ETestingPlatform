@@ -280,9 +280,9 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                     "count": 1,
                     "requirement": [
                       {
-                        "type"     : "equals",
-                        "property" : "teamcity.agent.pool.name",
-                        "value"    : "${'$'}{AGENTS_POOL}"
+                        "type"     : "contains",
+                        "property" : "env.COMPATIBLE_JOURNEY_TYPES",
+                        "value"    : "${'$'}{JOURNEY_TYPE}"
                       }
                     ]
                   }
