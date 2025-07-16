@@ -25,5 +25,9 @@ create(DslContext.projectId, BuildType({
             artifactRules = "SixthGeneratedBuild15_script.txt=>script"
         }
     }
+
+    requirements {
+        contains("env.COMPATIBLE_JOURNEY_TYPES", "%JOURNEY_TYPE%", "RQ_6")
+    }
 }))
 
