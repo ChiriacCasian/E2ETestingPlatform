@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.BuildType
+import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -17,6 +18,12 @@ create(DslContext.projectId, BuildType({
     params {
         param("journeyName", "ceva")
         param("JOURNEY_TYPE", "WEB")
+    }
+
+    features {
+        swabra {
+            id = "swabra"
+        }
     }
 
     dependencies {
