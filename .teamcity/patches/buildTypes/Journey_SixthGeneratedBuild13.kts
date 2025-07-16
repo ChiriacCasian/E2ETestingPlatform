@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.BuildType
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -18,6 +19,24 @@ create(DslContext.projectId, BuildType({
 
     params {
         param("journeyName", "ceva")
+    }
+
+    steps {
+        script {
+            name = "Run Journey"
+            id = "TEMPLATE_RUNNER_1"
+            scriptContent = """
+                set -euo pipefail
+                
+                ART_DIR="${'$'}TEAMCITY_BUILD_CHECKOUT_DIR/scripts"   # env var is always set by TC
+                
+                echo "Artifacts present in: ${'$'}ART_DIR"
+                shopt -s nullglob                              # avoid the literal *.txt when none
+                for f in "${'$'}ART_DIR"/*.txt; do
+                  echo " - ${'$'}(basename "${'$'}f")"
+                done
+            """.trimIndent()
+        }
     }
 
     dependencies {
