@@ -15,6 +15,8 @@ create(DslContext.projectId, BuildType({
     id("Journey_SixthGeneratedBuild21")
     name = "SixthGeneratedBuild21"
 
+    artifactRules = "+:**/*"
+
     features {
         swabra {
             id = "swabra"
