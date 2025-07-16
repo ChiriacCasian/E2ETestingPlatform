@@ -282,7 +282,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                     {
                       "type"     : "contains",                    // valid: equals | exists | matches | contains | does-not-contain | etc.
                       "property" : "env.COMPATIBLE_JOURNEY_TYPES",// env.<VAR> exposes the agent’s environment variables
-                      "value"    : "%JOURNEY_TYPE%"
+                      "value"    : "${'$'}{JOURNEY_TYPE}"
                     }
                   ]
                 }
