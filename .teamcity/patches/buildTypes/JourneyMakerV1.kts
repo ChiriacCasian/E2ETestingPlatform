@@ -20,6 +20,12 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
         +:**/*
     """.trimIndent()
 
+    params {
+        add {
+            param("env.AGENTS_POOL", "")
+        }
+    }
+
     expectSteps {
         script {
             id = "simpleRunner"
