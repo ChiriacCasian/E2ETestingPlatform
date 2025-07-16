@@ -98,14 +98,13 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 #    JOURNEY_NAME should be defined as an Environment / System
                 #    parameter so it is available as ${'$'}JOURNEY_NAME
                 # ------------------------------------------------------------------
-                FILE_NAME="${'$'}{JOURNEY_NAME}.txt"
                 
                 # ------------------------------------------------------------------
                 # 2. Write the parameter value into the file
                 #    %JOURNEY_SCRIPT% is substituted by TeamCity → becomes a literal
                 #    string inside the here-document, preserving line breaks.
                 # ------------------------------------------------------------------
-                cat > "${'$'}{FILE_NAME}" <<'PY'
+                cat > "${'$'}{JOURNEY_NAME}_script.txt" <<'PY'
                 import inspect
                 import json
                 import os
