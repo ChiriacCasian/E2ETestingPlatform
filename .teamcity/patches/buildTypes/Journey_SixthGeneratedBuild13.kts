@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.BuildType
+import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.ui.*
 
@@ -37,6 +38,12 @@ create(DslContext.projectId, BuildType({
                   echo " - ${'$'}(basename "${'$'}f")"
                 done
             """.trimIndent()
+        }
+    }
+
+    features {
+        swabra {
+            id = "swabra"
         }
     }
 
