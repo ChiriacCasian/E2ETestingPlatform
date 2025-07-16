@@ -311,9 +311,6 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
 
     requirements {
         add {
-            exists("env.HOMEBREW_CELLAR")
-        }
-        add {
             equals("env.POOL_ID", "1")
         }
     }
