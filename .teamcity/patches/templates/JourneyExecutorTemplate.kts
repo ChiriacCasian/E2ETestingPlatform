@@ -41,14 +41,14 @@ changeTemplate(RelativeId("JourneyExecutorTemplate")) {
                 ART_DIR="./script"
                 
                 # Expect exactly one .txt file in ART_DIR
-                txt_files=("${'$'}ART_DIR"/*14.txt)
+                txt_files=("${'$'}ART_DIR"/*.txt)
                 if [[ ${'$'}{#txt_files[@]} -ne 1 ]]; then
                   echo "Error: expected exactly one .txt file in ${'$'}ART_DIR, found ${'$'}{#txt_files[@]}." >&2
                   exit 1
                 fi
                 
                 # Absolute path (realpath first, fallback to readlink -f)
-                abs_path="${'$'}{'${'$'}'}(realpath "${'$'}{txt_files[0]}" 2>/dev/null || readlink -f "${'$'}{txt_files[0]}")"
+                abs_path="${'$'}(realpath "${'$'}{txt_files[0]}" 2>/dev/null || readlink -f "${'$'}{txt_files[0]}")"
                 echo "Script found: ${'$'}abs_path"
                 
                 # Call the endpoint — adjust URL / headers to match your service
