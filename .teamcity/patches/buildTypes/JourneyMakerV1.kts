@@ -274,7 +274,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                         }
                       }
                     ]
-                  }
+                  },
                   
                   	"requirements": {
                     "count": 1,
