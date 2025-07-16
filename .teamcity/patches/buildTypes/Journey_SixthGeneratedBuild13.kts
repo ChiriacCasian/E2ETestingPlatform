@@ -47,7 +47,7 @@ create(DslContext.projectId, BuildType({
                 # Call the endpoint — adjust URL / headers to match your service
                 curl -sSf -X POST \
                   -H "Content-Type: application/json" \
-                  "http://localhost:8060/runJourney/HybridAndroid_1.txt/ANDROID"
+                  "http://localhost:8060/runJourney/${'$'}abs_path/ANDROID"
                 
                 echo "runJourney invoked successfully."
             """.trimIndent()
