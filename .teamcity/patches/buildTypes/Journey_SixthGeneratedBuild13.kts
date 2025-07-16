@@ -45,9 +45,11 @@ create(DslContext.projectId, BuildType({
                 echo "Script found: ${'$'}abs_path"
                 
                 # Call the endpoint — adjust URL / headers to match your service
-                curl -sSf -X POST \
-                  -H "Content-Type: application/json" \
-                  "http://localhost:8060/runJourney/something/ANDROID"
+                curl -X POST \
+                     --data-urlencode "scriptPath=/opt/agent/work/abc123/scripts/Build42.txt" \
+                     --data-urlencode "type=WEB" \
+                     http://localhost:8060/runJourney
+                
                 
                 echo "runJourney invoked successfully."
             """.trimIndent()
