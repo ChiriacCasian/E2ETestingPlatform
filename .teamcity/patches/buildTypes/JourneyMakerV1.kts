@@ -102,17 +102,6 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 #!/usr/bin/env bash
                 set -euo pipefail
                 
-                # ------------------------------------------------------------------
-                # 1. Compose the target file name
-                #    JOURNEY_NAME should be defined as an Environment / System
-                #    parameter so it is available as ${'$'}JOURNEY_NAME
-                # ------------------------------------------------------------------
-                
-                # ------------------------------------------------------------------
-                # 2. Write the parameter value into the file
-                #    %JOURNEY_SCRIPT% is substituted by TeamCity → becomes a literal
-                #    string inside the here-document, preserving line breaks.
-                # ------------------------------------------------------------------
                 cat > "${'$'}{JOURNEY_NAME}_script.txt" <<'PY'
                 import inspect
                 import json
