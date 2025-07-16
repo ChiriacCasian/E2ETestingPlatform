@@ -22,7 +22,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
 
     params {
         add {
-            param("env.AGENTS_POOL", "")
+            param("env.AGENTS_POOL", "Default")
         }
     }
 
