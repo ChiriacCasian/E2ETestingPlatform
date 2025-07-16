@@ -27,6 +27,9 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
         add {
             param("env.AGENTS_POOL", "Default")
         }
+        add {
+            param("JOURNEY_TYPE", "WEB")
+        }
     }
 
     expectSteps {
