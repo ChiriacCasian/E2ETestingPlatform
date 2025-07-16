@@ -143,4 +143,10 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
     }
+
+    requirements {
+        add {
+            exists("env.DEVICE_UUID")
+        }
+    }
 }
