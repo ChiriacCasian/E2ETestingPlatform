@@ -63,5 +63,9 @@ create(DslContext.projectId, BuildType({
             artifactRules = "SixthGeneratedBuild5.txt"
         }
     }
+
+    requirements {
+        exists("env.ADB_SERVER_SOCKET", "RQ_2")
+    }
 }))
 
