@@ -22,7 +22,7 @@ create(DslContext.projectId, BuildType({
         artifacts(RelativeId("JourneyMakerV1")) {
             id = "ARTIFACT_DEPENDENCY_7"
             buildRule = build("80")
-            artifactRules = "*.txt=>scripts/theScript.txt"
+            artifactRules = "*.txt"
         }
     }
 
