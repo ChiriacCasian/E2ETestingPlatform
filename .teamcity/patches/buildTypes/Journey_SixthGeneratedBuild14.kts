@@ -32,7 +32,7 @@ create(DslContext.projectId, BuildType({
                 ART_DIR="./scripts"
                 
                 # Expect exactly one .txt file in ART_DIR
-                txt_files=("${'$'}ART_DIR"/*.txt)
+                txt_files=("${'$'}ART_DIR"/*14.txt)
                 if [[ ${'$'}{#txt_files[@]} -ne 1 ]]; then
                   echo "Error: expected exactly one .txt file in ${'$'}ART_DIR, found ${'$'}{#txt_files[@]}." >&2
                   exit 1
