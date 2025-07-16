@@ -25,5 +25,9 @@ create(DslContext.projectId, BuildType({
             artifactRules = "*.txt"
         }
     }
+
+    requirements {
+        exists("env.ADB_SERVER_SOCKET", "RQ_3")
+    }
 }))
 
