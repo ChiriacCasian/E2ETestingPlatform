@@ -16,6 +16,7 @@ create(DslContext.projectId, BuildType({
 
     params {
         param("journeyName", "ceva")
+        param("JOURNEY_TYPE", "WEB")
     }
 
     dependencies {
