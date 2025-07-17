@@ -16,12 +16,8 @@ object JourneyMakerV1 : BuildType({
     """.trimIndent()
 
     params {
-        add {
-            param("env.AGENTS_POOL", "Default")
-        }
-        add {
-            param("JOURNEY_TYPE", "WEB")
-        }
+        param("env.AGENTS_POOL", "Default")
+        param("JOURNEY_TYPE", "WEB")
     }
     steps {
         script {
@@ -148,9 +144,8 @@ object JourneyExecutorTemplate : Template({
     name = "JourneyExecutorTemplate"
 
     steps {
-        update<ScriptBuildStep>(0) {
-            id = "TEMPLATE_RUNNER_1"
-            clearConditions()
+        script {
+            id = "Execute Journey Script"
             scriptContent = """
                 #!/usr/bin/env bash
                 set -euo pipefail
@@ -175,9 +170,7 @@ object JourneyExecutorTemplate : Template({
                      --data-urlencode "type=WEB" \
                      http://localhost:8060/runJourney
             """.trimIndent()
-            param("teamcity.kubernetes.executor.pull.policy", "")
         }
-        items.removeAt(1)
     }
 }
 )
