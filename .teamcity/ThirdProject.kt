@@ -1,10 +1,9 @@
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.Project
-import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 
-object SecondProject : Project({
-    name = "Second_project"
-    id("SecondProject")
+object ThirdProject : Project({
+    name = "Third_project"
+    id("ThirdProject")
 
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
 
