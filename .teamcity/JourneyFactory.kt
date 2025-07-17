@@ -24,8 +24,7 @@ object JourneyMakerV1 : BuildType({
         }
     }
     steps {
-        update<ScriptBuildStep>(0) {
-            clearConditions()
+        script {
             scriptContent = """
                 #!/usr/bin/env bash
                 set -euo pipefail
@@ -35,10 +34,8 @@ object JourneyMakerV1 : BuildType({
                   -qO- http://localhost:3002/code  \
                 	| jq -r '.code' > "${'$'}{JOURNEY_NAME}_script.py"
             """.trimIndent()
-            param("teamcity.kubernetes.executor.pull.policy", "")
         }
-        update<ScriptBuildStep>(1) {
-            clearConditions()
+        script {
             scriptContent = """
                 payload=${'$'}(cat <<EOF
                 {
@@ -134,21 +131,16 @@ object JourneyMakerV1 : BuildType({
                   "localhost:8111/app/rest/buildTypes" \
                   -d "${'$'}{payload}"
             """.trimIndent()
-            param("teamcity.kubernetes.executor.pull.policy", "")
         }
     }
 
     features {
-        add {
-            swabra {
-            }
+        swabra {
         }
     }
 
     requirements {
-        add {
-            doesNotExist("env.AGENT_NAME")
-        }
+        doesNotExist("env.AGENT_NAME")
     }
 })
 
