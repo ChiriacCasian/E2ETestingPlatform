@@ -7,11 +7,9 @@ object SecondProject : Project({
 
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
 
-//    buildType(JourneyMakerV1)
-//
-//    template(JourneyExecutorTemplate)
-//
-//    buildType(Journey_FirstGeneratedJourney)
+    buildType(JourneyMakerV1)
+
+    template(JourneyExecutorTemplate)
 
     features {
         buildReportTab {
