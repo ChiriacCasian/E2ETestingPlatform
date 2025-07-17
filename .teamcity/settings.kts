@@ -26,23 +26,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 
 version = "2025.03"
 
-project {
-    vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
-
-    buildType(JourneyMakerV1)
-
-    template(JourneyExecutorTemplate)
-
-    buildType(Journey_FirstGeneratedJourney)
-}
+project { TC_Custom_Project }
 
 
-object HttpsGithubComChiriacCasianTCBuildServerGit : GitVcsRoot({
-    name = "https://github.com/ChiriacCasian/TCBuildServer.git"
-    url = "https://github.com/ChiriacCasian/TeamCityBuildServer"
-    branch = "refs/heads/main"
-    authMethod = password {
-        userName = "ChiriacCasian"
-        password = "credentialsJSON:9b4689e5-3c42-4bfb-843e-7d0d1a023a38"
-    }
-})
+

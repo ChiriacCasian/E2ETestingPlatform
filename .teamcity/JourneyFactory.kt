@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import java.io.File
+import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 
 
 object JourneyMakerV1 : BuildType({
