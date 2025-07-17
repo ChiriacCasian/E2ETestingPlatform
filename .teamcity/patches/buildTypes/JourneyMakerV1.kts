@@ -108,7 +108,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                 wget \
                   --method=POST \
                   -qO- http://localhost:3002/code  \
-                	| jq -r '.code' > ${'$'}{JOURNEY_NAME}_script.py
+                	| jq -r '.code' > '${'$'}{JOURNEY_NAME}_script.py'
             """.trimIndent()
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
