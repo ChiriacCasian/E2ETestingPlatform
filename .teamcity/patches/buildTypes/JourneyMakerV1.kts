@@ -136,7 +136,7 @@ changeBuildType(RelativeId("JourneyMakerV1")) {
                             },
                             {
                               "name": "pathRules",
-                              "value": "${'$'}{JOURNEY_NAME}_script.txt=>script"
+                              "value": "${'$'}{JOURNEY_NAME}_script.py=>script"
                             },
                             {
                               "name": "revisionName",
