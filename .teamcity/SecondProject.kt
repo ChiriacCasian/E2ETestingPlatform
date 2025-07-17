@@ -2,7 +2,7 @@ import jetbrains.buildServer.configs.kotlin.Project
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 
 object SecondProject : Project({
-    name = "SecondProject"
+    name = "Second_Project"
     id("SecondProject")
 
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
