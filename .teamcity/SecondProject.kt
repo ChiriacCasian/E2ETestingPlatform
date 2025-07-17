@@ -7,15 +7,15 @@ object SecondProject : Project({
 
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
 
-//    buildType(JourneyMakerV1)
-//
-//    template(JourneyExecutorTemplate)
+    buildType(JourneyMakerV1)
 
-    features {
-        buildReportTab {
-            id = "ID_OF_BUILD_REPORT_TAB"
-            title = "Report"
-            startPage = "report/index.html"
-        }
-    }
+    template(JourneyExecutorTemplate)
+
+//    features {
+//        buildReportTab {
+//            id = "ID_OF_BUILD_REPORT_TAB"
+//            title = "Report"
+//            startPage = "report/index.html"
+//        }
+//    }
 })
