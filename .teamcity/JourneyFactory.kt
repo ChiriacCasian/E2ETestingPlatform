@@ -10,9 +10,6 @@ import jetbrains.buildServer.configs.kotlin.ui.update
 
 
 object JourneyMakerV1 : BuildType({
-    check(artifactRules == "%env.JOURNEY_NAME%.txt") {
-        "Unexpected option value: artifactRules = $artifactRules"
-    }
     artifactRules = """
         %env.JOURNEY_NAME%.txt
         +:**/*
