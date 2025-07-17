@@ -1,8 +1,7 @@
-import HttpsGithubComChiriacCasianTCBuildServerGit
 import jetbrains.buildServer.configs.kotlin.Project
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 
-object TC_Custom_Project : Project({
+object SecondProject : Project({
     name = "Second_Project"
 
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)

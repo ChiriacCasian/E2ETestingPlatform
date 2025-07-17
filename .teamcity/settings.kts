@@ -1,6 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -26,7 +24,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 
 version = "2025.03"
 
-project { TC_Custom_Project }
+project { SecondProject }
 
 
 
