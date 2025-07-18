@@ -20,6 +20,8 @@ object JourneyMakerV1 : BuildType({
     params {
         param("env.AGENTS_POOL", "Default")
         param("JOURNEY_TYPE", "WEB")
+        param("env.JOURNEY_NAME", "Journey")
+        param("env.GIT_PAT_TOKEN", "eyJ0eXAiOiAiVENWMiJ9.OGEtUUxCVnBZN3NrY2NlWHdzdl9yMmZLM0ln.ZjUzNDI0NjUtOWIwZS00YjQyLThlZGQtZjEwNDZhMmEzNzI4")
     }
     steps {
         script {
