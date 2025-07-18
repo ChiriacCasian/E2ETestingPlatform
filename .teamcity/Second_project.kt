@@ -7,8 +7,6 @@ object Second_project : Project({
 
     buildType(JourneyMakerV1)
 
-    buildType(JourneyMakerV2)
-
     template(JourneyExecutorTemplate)
 
 //    features {
@@ -18,9 +16,4 @@ object Second_project : Project({
 //            startPage = "report/index.html"
 //        }
 //    }
-})
-
-object JourneyMakerV2 : BuildType({
-    name = "JourneyMakerV2"
-    id("JourneyMakerV2")
 })

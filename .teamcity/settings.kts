@@ -24,15 +24,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 
 version = "2025.03"
 
-project {
-    vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
-
-    buildType(JourneyMakerV1)
-
-    buildType(JourneyMakerV2)
-
-    template(JourneyExecutorTemplate)
-}
+project(Second_project)
 
 
 
