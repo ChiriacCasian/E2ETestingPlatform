@@ -10,6 +10,8 @@ import jetbrains.buildServer.configs.kotlin.ui.update
 
 
 object JourneyMakerV1 : BuildType({
+    name = "JourneyMakerV1"
+
     artifactRules = """
         %env.JOURNEY_NAME%.txt
         +:**/*
