@@ -13,7 +13,6 @@ object JourneyMakerV1 : BuildType({
     name = "JourneyMakerV1"
 
     artifactRules = """
-        %env.JOURNEY_NAME%.txt
         +:**/*
     """.trimIndent()
 
@@ -146,6 +145,10 @@ object JourneyMakerV1 : BuildType({
 
 object JourneyExecutorTemplate : Template({
     name = "JourneyExecutorTemplate"
+
+    artifactRules = """
+        +:**/*
+    """.trimIndent()
 
     steps {
         script {
