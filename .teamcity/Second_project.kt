@@ -1,9 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.Project
 
-object ThirdProject : Project({
-    name = "Third_project"
-    id("ThirdProject")
+object Second_project : Project({
 
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
 
