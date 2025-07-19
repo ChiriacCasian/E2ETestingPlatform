@@ -147,8 +147,8 @@ object JourneyExecutorTemplate : Template({
     name = "JourneyExecutorTemplate"
 
     artifactRules = """
-        +:report
-        +:script
+        +:report=>report
+        +:script=>script
     """.trimIndent()
 
     steps {

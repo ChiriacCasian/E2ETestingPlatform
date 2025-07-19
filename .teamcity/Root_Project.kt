@@ -13,7 +13,7 @@ object Root_Project : Project({
         buildReportTab {
             id = "REPORT_TAB"
             title = "Report"
-            startPage = "index.html"
+            startPage = "report/index.html"
         }
     }
 })
