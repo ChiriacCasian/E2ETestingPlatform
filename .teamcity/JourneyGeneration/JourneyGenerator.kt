@@ -43,7 +43,7 @@ object JourneyGenerator : BuildType({
         }
         script {
             id = "Generate Journey build configuration"
-            scriptContent = File(id!!).readText().trimIndent()
+            scriptContent = File("Generate_Journey_Script.txt").readText().trimIndent()
         }
     }
 
