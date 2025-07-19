@@ -1,3 +1,5 @@
+import JourneyExecution.JourneyExecutorTemplate
+import JourneyGeneration.JourneyGenerator
 import jetbrains.buildServer.configs.kotlin.Project
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 
@@ -5,7 +7,7 @@ object Root_Project : Project({
 
     vcsRoot(HttpsGithubComChiriacCasianTCBuildServerGit)
 
-    buildType(JourneyMakerV1)
+    buildType(JourneyGenerator)
 
     template(JourneyExecutorTemplate)
 

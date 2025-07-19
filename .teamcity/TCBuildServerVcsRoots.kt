@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
+// TODO: move auth data to secrets vault
 object HttpsGithubComChiriacCasianTCBuildServerGit : GitVcsRoot({
     name = "https://github.com/ChiriacCasian/TCBuildServer.git"
     url = "https://github.com/ChiriacCasian/TeamCityBuildServer"
