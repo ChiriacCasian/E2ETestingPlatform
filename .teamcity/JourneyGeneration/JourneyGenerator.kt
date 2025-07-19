@@ -8,6 +8,8 @@ import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.ranges.contains
 
+const val relPath = "/.teamcity/JourneyGeneration/"
+
 /**
  * JourneyGenerator
  */
@@ -39,11 +41,11 @@ object JourneyGenerator : BuildType({
          **/
         script {
             id = "Generate Journey Script"
-            scriptContent = File("Generate_Journey_Script.txt").readText().trimIndent()
+            scriptContent = File(relPath + id!!).readText().trimIndent()
         }
         script {
             id = "Generate Journey build configuration"
-            scriptContent = File(id!!).readText().trimIndent()
+            scriptContent = File(relPath + id!!).readText().trimIndent()
         }
     }
 
