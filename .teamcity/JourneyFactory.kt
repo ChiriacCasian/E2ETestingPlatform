@@ -172,6 +172,10 @@ object JourneyExecutorTemplate : Template({
                 abs_path="${'$'}(realpath "${'$'}{txt_files[0]}" 2>/dev/null || readlink -f "${'$'}{txt_files[0]}")"
                 echo "Script found: ${'$'}abs_path"
                 
+                echo "##teamcity[publishArtifacts 'script/Journey2_script.py']"
+                
+                sleep 120 
+                
                 # Call the endpoint — adjust URL / headers to match your service
                 curl -X POST \
                      --data-urlencode "scriptPath=${'$'}abs_path" \
