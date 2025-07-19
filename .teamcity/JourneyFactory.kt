@@ -176,6 +176,7 @@ object JourneyExecutorTemplate : Template({
                 curl -X POST \
                      --data-urlencode "scriptPath=${'$'}abs_path" \
                      --data-urlencode "type=WEB" \
+                     --data-urlencode "buildConfigurationCheckoutDir=%teamcity.build.checkoutDir%" \
                      http://localhost:8060/runJourney
             """.trimIndent()
         }
