@@ -18,6 +18,7 @@ create(DslContext.projectId, BuildType({
     params {
         param("env.BUILD_AGENT_HOME", "%teamcity.agent.home.dir%")
         param("env.AGENT_WORK_DIR", "%teamcity.build.workingDir%")
+        param("env.CHECKOUT_DIR", "%teamcity.build.checkoutDir%")
     }
 
     features {
