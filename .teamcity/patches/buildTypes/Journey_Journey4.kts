@@ -3,6 +3,7 @@ package patches.buildTypes
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -19,6 +20,17 @@ create(DslContext.projectId, BuildType({
         param("env.BUILD_AGENT_HOME", "%teamcity.agent.home.dir%")
         param("env.AGENT_WORK_DIR", "%teamcity.build.workingDir%")
         param("env.CHECKOUT_DIR", "%teamcity.build.checkoutDir%")
+    }
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = """
+                echo 'thse are the env variables'
+                echo ${'$'}{CHECKOUT_DIR}
+                echo '%teamcity.build.checkoutDir%'
+            """.trimIndent()
+        }
     }
 
     features {
