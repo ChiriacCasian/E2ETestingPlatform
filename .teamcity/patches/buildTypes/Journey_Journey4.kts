@@ -15,6 +15,10 @@ create(DslContext.projectId, BuildType({
     id("Journey_Journey4")
     name = "Journey4"
 
+    params {
+        param("env.BUILD_AGENT_HOME", "%teamcity.agent.home.dir%")
+    }
+
     features {
         swabra {
             id = "swabra"
