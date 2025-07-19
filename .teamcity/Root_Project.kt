@@ -19,7 +19,7 @@ object Root_Project : Project({
         buildReportTab {
             id = "SCRIPT_GENERATION_TAB"
             title = "Generate Journey"
-            startPage = "script/Journey2_script.py"
+            startPage = "Journey2_script.py"
         }
     }
 })
