@@ -39,11 +39,11 @@ object JourneyGenerator : BuildType({
          **/
         script {
             id = "Generate Journey Script"
-            scriptContent = File(id!!).readText().trimIndent()
+            scriptContent = File("Generate_Journey_Script.txt").readText().trimIndent()
         }
         script {
             id = "Generate Journey build configuration"
-            scriptContent = File("Generate_Journey_Script.txt").readText().trimIndent()
+            scriptContent = File(id!!).readText().trimIndent()
         }
     }
 
