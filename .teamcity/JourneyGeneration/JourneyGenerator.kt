@@ -3,12 +3,10 @@ package JourneyGeneration
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
-import java.io.File
-import java.nio.file.Files
 import java.nio.file.Path
-import kotlin.ranges.contains
+import kotlin.io.path.readText
 
-const val relPath = "/.teamcity/JourneyGeneration/"
+private const val RELATIVE_PATH = ".teamcity/JourneyGeneration/"
 
 /**
  * JourneyGenerator
@@ -41,11 +39,11 @@ object JourneyGenerator : BuildType({
          **/
         script {
             id = "Generate Journey Script"
-            scriptContent = File(relPath + id!!).readText().trimIndent()
+            scriptContent = Path.of(RELATIVE_PATH + id).readText()
         }
         script {
             id = "Generate Journey build configuration"
-            scriptContent = File(relPath + id!!).readText().trimIndent()
+            scriptContent = Path.of(RELATIVE_PATH + id).readText()
         }
     }
 

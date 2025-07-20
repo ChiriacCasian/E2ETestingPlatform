@@ -2,7 +2,10 @@ package JourneyExecution
 
 import jetbrains.buildServer.configs.kotlin.Template
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
-import java.io.File
+import java.nio.file.Path
+import kotlin.io.path.readText
+
+private const val RELATIVE_PATH = ".teamcity/JourneyExecution/"
 
 object JourneyExecutorTemplate : Template({
     name = "JourneyExecutorTemplate"
@@ -15,7 +18,7 @@ object JourneyExecutorTemplate : Template({
     steps {
         script {
             id = "Execute Journey Script"
-            scriptContent = File(id!!).readText().trimIndent()
+            scriptContent = Path.of(RELATIVE_PATH + id).readText()
         }
     }
 }
