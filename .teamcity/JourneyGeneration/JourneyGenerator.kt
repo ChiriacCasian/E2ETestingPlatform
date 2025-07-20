@@ -53,6 +53,6 @@ object JourneyGenerator : BuildType({
     }
 
     requirements {
-        contains("env.COMPATIBLE_JOURNEY_TYPES", "WEB", "AGENT_REQUIREMENT")
+        contains("env.COMPATIBLE_JOURNEY_TYPES", "GENERATOR", "AGENT_REQUIREMENT")
     }
 })
