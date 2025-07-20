@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
 payload=$(cat <<EOF
 {
-  "id"        : "${PROJECT_PATH_ID}_Journey_${JOURNEY_NAME}",
-  "name"      : "${JOURNEY_NAME}",
-  "projectId" : "${PROJECT_PATH_ID}",
-  "template": { "id": "${PROJECT_PATH_ID}t_JourneyExecutorTemplate" },
+  "id"        : "${'$'}{PROJECT_PATH_ID}_Journey_${'$'}{JOURNEY_NAME}",
+  "name"      : "${'$'}{JOURNEY_NAME}",
+  "projectId" : "${'$'}{PROJECT_PATH_ID}",
+  "template": { "id": "${'$'}{PROJECT_PATH_ID}t_JourneyExecutorTemplate" },
     "artifact-dependencies": {
     "count": 1,
     "artifact-dependency": [
@@ -21,7 +19,7 @@ payload=$(cat <<EOF
             },
             {
               "name": "pathRules",
-              "value": "${JOURNEY_NAME}_script.py=>script"
+              "value": "${'$'}{JOURNEY_NAME}_script.py=>script"
             },
             {
               "name": "revisionName",
@@ -85,8 +83,8 @@ EOF
 )
 
 curl -i -sS --fail-with-body \
-  -H "Authorization: Bearer ${GIT_PAT_TOKEN}" \
+  -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
   -H "Content-Type: application/json" \
   -X POST \
-  "${TEAMCITY_SERVER_URL}/app/rest/buildTypes" \
-  -d "${payload}"
+  "${'$'}{TEAMCITY_SERVER_URL}/app/rest/buildTypes" \
+  -d "${'$'}{payload}"
