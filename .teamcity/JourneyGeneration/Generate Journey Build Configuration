@@ -84,7 +84,7 @@ payload=$(cat <<EOF
 EOF
 )
 
-curl -i -sS \
+curl -i -sS --fail-with-body \
   -H "Authorization: Bearer ${GIT_PAT_TOKEN}" \
   -H "Content-Type: application/json" \
   -X POST \
