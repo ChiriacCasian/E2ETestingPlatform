@@ -7,6 +7,19 @@ payload=$(cat <<EOF
   "template": {
     "id": "${PROJECT_PATH_ID}_JourneyExecutorTemplate"
   },
+  "parameters": {
+    "count": 2,
+    "property": [
+      {
+        "name": "JOURNEY_TYPE",
+        "value": "%JOURNEY_TYPE%"
+      },
+      {
+        "name": "JOURNEY_NAME",
+        "value": "${JOURNEY_NAME}"
+      }
+    ]
+  },
   "artifact-dependencies": {
     "count": 1,
     "artifact-dependency": [
