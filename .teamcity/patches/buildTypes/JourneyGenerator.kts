@@ -227,7 +227,7 @@ changeBuildType(RelativeId("JourneyGenerator")) {
                 }
                 EOF
                 )
-                
+                echo ${'$'}JOURNEY_TYPE
                 curl -i -sS --fail-with-body \
                   -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
                   -H "Content-Type: application/json" \
