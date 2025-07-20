@@ -83,8 +83,8 @@ EOF
 )
 
 curl -i -sS --fail-with-body \
-  -H "Authorization: Bearer ${'$'}{GIT_PAT_TOKEN}" \
+  -H "Authorization: Bearer ${GIT_PAT_TOKEN}" \
   -H "Content-Type: application/json" \
   -X POST \
-  "${'$'}{TEAMCITY_SERVER_URL}/app/rest/buildTypes" \
-  -d "${'$'}{payload}"
+  "${TEAMCITY_SERVER_URL}/app/rest/buildTypes" \
+  -d "${payload}"
