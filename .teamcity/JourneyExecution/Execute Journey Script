@@ -15,8 +15,9 @@ abs_path="$(readlink -f "${txt_files[0]}")"
 echo "Script found: ${abs_path}"
 
 curl -i -sS --fail-with-body \
+     --data-urlencode "journeyName=%JOURNEY_NAME%" \
      --data-urlencode "scriptPath=${abs_path}" \
-     --data-urlencode "type=WEB" \
+     --data-urlencode "type=%JOURNEY_TYPE%" \
      --data-urlencode "buildConfigurationCheckoutDir=%teamcity.build.checkoutDir%" \
      -X POST \
      http://localhost:8060/runJourney
