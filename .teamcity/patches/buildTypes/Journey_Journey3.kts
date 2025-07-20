@@ -24,7 +24,7 @@ create(DslContext.projectId, BuildType({
     steps {
         script {
             id = "simpleRunner"
-            scriptContent = "echo ${'$'}JOURNEY_NAME"
+            scriptContent = "echo ${'$'}{JOURNEY_NAME}"
         }
     }
 
