@@ -19,6 +19,8 @@ object JourneyGenerator : BuildType({
         +:*_script.py
     """.trimIndent()
 
+    val checkoutDir = System.getProperty("teamcity.build.checkoutDir")
+
     params {
         /// we may want to split generators on type, for example WEB_GENERATOR, or ANDROID_GENERATOR, depending on what phone/emulator they have access to
         param("env.COMPATIBLE_JOURNEY_TYPES", "GENERATOR")
@@ -39,7 +41,7 @@ object JourneyGenerator : BuildType({
          **/
         script {
             id = "Generate Journey Script"
-            scriptContent = Path.of(RELATIVE_PATH + id).readText()
+            scriptContent = Path.of(checkoutDir,RELATIVE_PATH, id).readText()
         }
         script {
             id = "Generate Journey build configuration"
