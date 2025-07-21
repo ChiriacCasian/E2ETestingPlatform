@@ -24,5 +24,9 @@ create(DslContext.projectId, BuildType({
             """.trimIndent()
         }
     }
+
+    requirements {
+        contains("env.COMPATIBLE_JOURNEY_TYPES", "WEB")
+    }
 }))
 
