@@ -21,6 +21,8 @@ create(DslContext.projectId, BuildType({
                 #!/usr/bin/env bash
                 
                 sleep 120
+                
+                echo %teamcity.build.checkoutDir%
             """.trimIndent()
         }
     }
