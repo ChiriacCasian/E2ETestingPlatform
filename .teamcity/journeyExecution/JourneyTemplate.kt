@@ -1,14 +1,14 @@
-package JourneyExecution
+package journeyExecution
 
 import jetbrains.buildServer.configs.kotlin.Template
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import java.nio.file.Path
 import kotlin.io.path.readText
 
-private const val RELATIVE_PATH = "JourneyExecution/"
+private const val RELATIVE_PATH = "journeyExecution/"
 
-object JourneyExecutorTemplate : Template({
-    name = "JourneyExecutorTemplate"
+object JourneyTemplate : Template({
+    name = "JourneyTemplate"
 
     artifactRules = """
         +:report=>report

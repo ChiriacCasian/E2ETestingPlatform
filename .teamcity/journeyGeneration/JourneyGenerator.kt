@@ -1,4 +1,4 @@
-package JourneyGeneration
+package journeyGeneration
 
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
@@ -6,11 +6,8 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import java.nio.file.Path
 import kotlin.io.path.readText
 
-private const val RELATIVE_PATH = "JourneyGeneration/"
+private const val RELATIVE_PATH = "journeyGeneration/"
 
-/**
- * JourneyGenerator
- */
 object JourneyGenerator : BuildType({
     name = "JourneyGenerator"
 
@@ -38,7 +35,7 @@ object JourneyGenerator : BuildType({
          * echo "##teamcity[publishArtifacts 'script/Journey2_script.py']"
          **/
         script {
-            id = "JourneyGeneration/Generate Journey Script"
+            id = "journeyGeneration/Generate Journey Script"
             scriptContent = Path.of( id!!).readText()
         }
         script {
