@@ -9,7 +9,7 @@ script_path="$output_dir/${journey_name}_script.py"
 
 source /app/.venv/bin/activate
 
-java -jar journeyExecutor.jar \
+java -jar app-all.jar \
      "$journey_name" \
      "$journey_type" \
      "$script_path" \
