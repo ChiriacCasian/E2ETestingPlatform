@@ -7,6 +7,7 @@ import journeyExecution.JourneyExecutor
 object Root_Project : Project({
 
     vcsRoot(TCBuildServerGit)
+    vcsRoot(JourneyExecutorPodInfraV2Git)
 
     buildType(JourneyGenerator)
     buildType(JourneyExecutor)
