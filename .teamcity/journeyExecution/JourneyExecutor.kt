@@ -1,19 +1,28 @@
 package journeyExecution
 
 import JourneyExecutorPodInfraV2Git
+import Root_Project.vcsRoot
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
+import jetbrains.buildServer.configs.kotlin.ui.add
 
 object JourneyExecutor : BuildType( {
     name = "Journey Executor"
     description = "Latest artifact of this build is used to run Journeys on agents"
 
     artifactRules= """
-        +:app-jar.jar
+        +:**/*-all.jar=>journeyExecutor.jar
     """.trimIndent()
 
-    vcs {root(JourneyExecutorPodInfraV2Git)}
+    vcsRoot { JourneyExecutorPodInfraV2Git }
+
+    triggers {
+        add {
+            vcs {
+            }
+        }
+    }
 
     steps {
         gradle {

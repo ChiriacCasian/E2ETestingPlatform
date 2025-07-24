@@ -19,4 +19,5 @@ object JourneyExecutorPodInfraV2Git : GitVcsRoot({
         userName = "ChiriacCasian"
         password = "credentialsJSON:9b4689e5-3c42-4bfb-843e-7d0d1a023a38"
     }
+    branchSpec = "refs/heads/*" /// without this we can't add a vcs trigger
 })
