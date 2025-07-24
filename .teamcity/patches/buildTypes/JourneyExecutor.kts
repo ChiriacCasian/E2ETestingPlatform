@@ -1,7 +1,6 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -14,12 +13,4 @@ changeBuildType(RelativeId("JourneyExecutor")) {
         "Unexpected option value: artifactRules = $artifactRules"
     }
     artifactRules = "+:**/app-all.jar=>all.jar"
-
-    triggers {
-        add {
-            vcs {
-                branchFilter = ""
-            }
-        }
-    }
 }
