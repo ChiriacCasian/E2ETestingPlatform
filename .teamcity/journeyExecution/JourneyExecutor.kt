@@ -1,11 +1,10 @@
 package journeyExecution
 
 import JourneyExecutorPodInfraV2Git
-import Root_Project.vcsRoot
+import RootProject.vcsRoot
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
-import jetbrains.buildServer.configs.kotlin.*
 
 object JourneyExecutor : BuildType( {
     name = "Journey Executor"

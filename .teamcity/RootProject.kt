@@ -4,7 +4,7 @@ import jetbrains.buildServer.configs.kotlin.Project
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 import journeyExecution.JourneyExecutor
 
-object Root_Project : Project({
+object RootProject : Project({
 
     vcsRoot(TCBuildServerGit)
     vcsRoot(JourneyExecutorPodInfraV2Git)
