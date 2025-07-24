@@ -13,7 +13,7 @@ changeBuildType(RelativeId("JourneyExecutor")) {
     check(artifactRules == "+:app-jar.jar") {
         "Unexpected option value: artifactRules = $artifactRules"
     }
-    artifactRules = "+:**/app-all.jar"
+    artifactRules = "+:**/app-all.jar=>all.jar"
 
     triggers {
         add {
