@@ -11,7 +11,7 @@ object JourneyExecutor : BuildType( {
     description = "Latest artifact of this build is used to run Journeys on agents"
 
     artifactRules= """
-        +:**/*-all.jar=>journeyExecutor.jar
+        +:*-all.jar
     """.trimIndent()
 
     vcs { root(JourneyExecutorPodInfraV2Git) }
