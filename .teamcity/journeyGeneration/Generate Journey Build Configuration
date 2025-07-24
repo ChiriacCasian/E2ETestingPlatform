@@ -6,6 +6,92 @@ payload=$(cat <<EOF
   "projectId": "${PROJECT_PATH_ID}",
   "template": {
     "id": "${PROJECT_PATH_ID}_JourneyTemplate"
+  },
+  "parameters": {
+    "count": 2,
+    "property": [
+      {
+        "name": "JOURNEY_TYPE",
+        "value": "%JOURNEY_TYPE%"
+      },
+      {
+        "name": "JOURNEY_NAME",
+        "value": "${JOURNEY_NAME}"
+      }
+    ]
+  },
+  "artifact-dependencies": {
+    "count": 1,
+    "artifact-dependency": [
+      {
+        "id": "ARTIFACT_DEPENDENCY_JOURNEY_SCRIPT",
+        "type": "artifact_dependency",
+        "properties": {
+          "property": [
+            {
+              "name": "cleanDestinationDirectory",
+              "value": "false"
+            },
+            {
+              "name": "pathRules",
+              "value": "${JOURNEY_NAME}_script.py=>script"
+            },
+            {
+              "name": "revisionName",
+              "value": "buildNumber"
+            },
+            {
+              "name": "revisionValue",
+              "value": "%system.build.number%"
+            }
+          ],
+          "count": 4
+        },
+        "source-buildType": {
+          "id": "%system.teamcity.buildType.id%"
+        }
+      }
+    ]
+  },
+  "features": {
+    "count": 1,
+    "feature": [
+      {
+        "id": "swabra",
+        "type": "swabra",
+        "properties": {
+          "property": [
+            {
+              "name": "swabra.enabled",
+              "value": "swabra.before.build"
+            }
+          ],
+          "count": 1
+        }
+      }
+    ]
+  },
+  "agent-requirements": {
+    "count": 1,
+    "agent-requirement": [
+      {
+        "id": "RQ_6",
+        "type": "contains",
+        "properties": {
+          "property": [
+            {
+              "name": "property-name",
+              "value": "env.COMPATIBLE_JOURNEY_TYPES"
+            },
+            {
+              "name": "property-value",
+              "value": "%JOURNEY_TYPE%"
+            }
+          ],
+          "count": 2
+        }
+      }
+    ]
   }
 }
 EOF
