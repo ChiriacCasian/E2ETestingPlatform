@@ -23,12 +23,12 @@ object JourneyTemplate : Template({
         }
     }
 
-//    dependencies {
-//        artifacts(JourneyExecutor) {
-//            buildRule = lastSuccessful()
-//            artifactRules = "journeyExecutor.jar => journeyExecutor.jar"
-//            cleanDestination = true
-//        }
-//    }
+    dependencies {
+        artifacts(JourneyExecutor) {
+            buildRule = lastSuccessful()
+            artifactRules = "journeyExecutor.jar => journeyExecutor.jar"
+            cleanDestination = true
+        }
+    }
 }
 )
