@@ -14,7 +14,7 @@ object JourneyExecutor : BuildType( {
         +:**/*-all.jar=>journeyExecutor.jar
     """.trimIndent()
 
-    vcs { JourneyExecutorPodInfraV2Git }
+    vcs { root(JourneyExecutorPodInfraV2Git) }
 
     steps {
         gradle {
