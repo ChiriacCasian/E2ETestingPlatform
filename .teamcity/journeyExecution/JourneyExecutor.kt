@@ -15,14 +15,6 @@ object JourneyExecutor : BuildType( {
 
     vcs {root(JourneyExecutorPodInfraV2Git)}
 
-    triggers {
-        vcs {
-        branchFilter = """
-                +:refs/heads/master
-            """.trimIndent()
-        }
-    }
-
     steps {
         gradle {
             name = "Gradle build FatJar"
