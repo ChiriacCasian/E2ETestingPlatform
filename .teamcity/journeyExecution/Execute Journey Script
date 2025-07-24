@@ -1,23 +1,39 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-script_dir="./script"
+journey_name=%dep.SecondProject_JourneyGenerator.env.JOURNEY_NAME%
+journey_type=%dep.SecondProject_JourneyGenerator.JOURNEY_TYPE%
+device_uuid="R58N8104SRW"
+output_dir=%teamcity.build.checkoutDir%
+script_path="$output_dir/${journey_name}_script.py"
 
-# Check that there is exactly one .txt file in the script_dir
-txt_files=("${script_dir}"/*.py)
-if [[ ${#txt_files[@]} -ne 1 ]]; then
-  echo "Error: expected exactly one .txt file in ${script_dir}, found ${#txt_files[@]}." >&2
-  exit 1
-fi
+source /app/.venv/bin/activate
 
-# Absolute path of the script
-abs_path="$(readlink -f "${txt_files[0]}")"
-echo "Script found: ${abs_path}"
+java -jar journeyExecutor.jar \
+     "$journey_name" \
+     "$journey_type" \
+     "$script_path" \
+     "$device_uuid" \
+     "$output_dir"
 
-curl -i -sS --fail-with-body \
-     --data-urlencode "journeyName=%JOURNEY_NAME%" \
-     --data-urlencode "scriptPath=${abs_path}" \
-     --data-urlencode "type=%JOURNEY_TYPE%" \
-     --data-urlencode "buildConfigurationCheckoutDir=%teamcity.build.checkoutDir%" \
-     -X POST \
-     http://localhost:8060/runJourney
+# Use the following script in case you are using pod-infra-v1 (tc agent has running springboot server and takes script via request)
+#script_dir="./script"
+#
+## Check that there is exactly one .txt file in the script_dir
+#txt_files=("${script_dir}"/*.py)
+#if [[ ${#txt_files[@]} -ne 1 ]]; then
+#  echo "Error: expected exactly one .txt file in ${script_dir}, found ${#txt_files[@]}." >&2
+#  exit 1
+#fi
+#
+## Absolute path of the script
+#abs_path="$(readlink -f "${txt_files[0]}")"
+#echo "Script found: ${abs_path}"
+#
+#curl -i -sS --fail-with-body \
+#     --data-urlencode "journeyName=%JOURNEY_NAME%" \
+#     --data-urlencode "scriptPath=${abs_path}" \
+#     --data-urlencode "type=%JOURNEY_TYPE%" \
+#     --data-urlencode "buildConfigurationCheckoutDir=%teamcity.build.checkoutDir%" \
+#     -X POST \
+#     http://localhost:8060/runJourney
