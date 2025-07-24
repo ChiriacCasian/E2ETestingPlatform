@@ -26,7 +26,7 @@ object JourneyTemplate : Template({
     dependencies {
         artifacts(JourneyExecutor) {
             buildRule = lastSuccessful()
-            artifactRules = "+:journeyExecutor.jar"
+            artifactRules = "+:app-all.jar"
             cleanDestination = true
         }
     }
