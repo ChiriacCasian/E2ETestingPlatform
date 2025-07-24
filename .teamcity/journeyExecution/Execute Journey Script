@@ -5,7 +5,7 @@ journey_name=%dep.SecondProject_JourneyGenerator.env.JOURNEY_NAME%
 journey_type=%dep.SecondProject_JourneyGenerator.JOURNEY_TYPE%
 device_uuid="R58N8104SRW"
 output_dir=%teamcity.build.checkoutDir%
-script_path="$output_dir/${journey_name}_script.py"
+script_path="$output_dir/script/${journey_name}_script.py"
 
 source /app/.venv/bin/activate
 
