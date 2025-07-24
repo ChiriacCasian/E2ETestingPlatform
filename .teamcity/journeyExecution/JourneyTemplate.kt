@@ -2,6 +2,7 @@ package journeyExecution
 
 import jetbrains.buildServer.configs.kotlin.Template
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import journeyExecution.JourneyExecutor.artifactRules
 import java.nio.file.Path
 import kotlin.io.path.readText
 
@@ -19,6 +20,14 @@ object JourneyTemplate : Template({
         script {
             id = "Execute Journey Script"
             scriptContent = Path.of(RELATIVE_PATH + id).readText()
+        }
+    }
+
+    dependencies {
+        artifacts(JourneyExecutor) {
+            buildRule = lastSuccessful()
+            artifactRules = "journeyExecutor.jar => journeyExecutor.jar"
+            cleanDestination = true
         }
     }
 }
