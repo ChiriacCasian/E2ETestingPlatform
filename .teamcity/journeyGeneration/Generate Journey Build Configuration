@@ -5,7 +5,7 @@ payload=$(cat <<EOF
   "name": "${JOURNEY_NAME}",
   "projectId": "${PROJECT_PATH_ID}",
   "template": {
-    "id": "${PROJECT_PATH_ID}_JourneyExecutorTemplate"
+    "id": "${PROJECT_PATH_ID}_JourneyTemplate"
   }
 }
 EOF
