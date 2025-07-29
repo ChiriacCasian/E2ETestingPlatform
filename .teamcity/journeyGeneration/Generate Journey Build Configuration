@@ -99,6 +99,8 @@ EOF
 
 echo $payload
 
+echo "##teamcity[buildStatus status='SUCCESS' text='${JOURNEY_NAME}']"
+
 curl -i -sS --fail-with-body \
   -H "Authorization: Bearer ${GIT_PAT_TOKEN}" \
   -H "Content-Type: application/json" \
