@@ -150,8 +150,8 @@ changeBuildType(RelativeId("JourneyGenerator")) {
                 echo "##teamcity[buildStatus text='Click here to create journey!']"
                 
                 retry_count=0
-                max_retries=40
-                time_between_retries=30
+                max_retries=80
+                time_between_retries=5
                 
                 while [ ${'$'}retry_count -lt ${'$'}max_retries ]; do
                   if wget \
