@@ -147,7 +147,7 @@ changeBuildType(RelativeId("JourneyGenerator")) {
             scriptContent = """
                 #!/usr/bin/env bash
                 set -euo pipefail
-                echo "##teamcity[buildStatus status='RUNNING' text='Click here to create journey!']"
+                echo "##teamcity[buildStatus text='Click here to create journey!']"
                 
                 retry_count=0
                 max_retries=40
