@@ -145,6 +145,7 @@ changeBuildType(RelativeId("JourneyGenerator")) {
                 set -euo pipefail
                 
                 sleep 120
+                echo "##teamcity[buildStatus status='RUNNING' text='Click here to create journey!']"
                 
                 wget \
                   --method=POST \
