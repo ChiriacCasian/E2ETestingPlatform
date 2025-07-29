@@ -149,10 +149,29 @@ changeBuildType(RelativeId("JourneyGenerator")) {
                 set -euo pipefail
                 echo "##teamcity[buildStatus status='RUNNING' text='Click here to create journey!']"
                 
-                wget \
-                  --method=POST \
-                  -qO- http://localhost:3002/code  \
-                    | jq -r '.code' > "${'$'}{JOURNEY_NAME}_script.py"
+                retry_count=0
+                max_retries=40
+                time_between_retries=30
+                
+                while [ ${'$'}retry_count -lt ${'$'}max_retries ]; do
+                  if wget \
+                    --method=POST \
+                    -qO- http://localhost:3002/code 2>/dev/null \
+                      | jq -r '.code' > "${'$'}{JOURNEY_NAME}_script.py"; then
+                    echo "Successfully configured journey"
+                    break
+                  else
+                    retry_count=${'$'}((retry_count + 1))
+                    echo "Waiting for journey creation to finish."
+                    
+                    if [ ${'$'}retry_count -eq ${'$'}max_retries ]; then
+                      echo "Maximum journey creation time reached. Stopping."
+                      break
+                    fi
+                    
+                    sleep ${'$'}time_between_retries
+                  fi
+                done
             """.trimIndent()
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
