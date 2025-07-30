@@ -2,6 +2,7 @@ package webpagesPlugin
 
 import WebpagesPluginGit
 import jetbrains.buildServer.configs.kotlin.BuildType
+import jetbrains.buildServer.configs.kotlin.TeamCityDsl
 import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
@@ -15,6 +16,10 @@ object WebpagesPlugin : BuildType( {
     """.trimIndent()
 
     vcs { root(WebpagesPluginGit) }
+
+    params {
+        param("journey.generator.address" ,"\${system:journey.generator.address}")
+    }
 
     steps {
         maven {
