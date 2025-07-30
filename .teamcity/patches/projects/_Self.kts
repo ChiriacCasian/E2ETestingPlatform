@@ -15,10 +15,13 @@ changeProject(DslContext.projectId) {
             param("TC_BUILDSERVER_GIT_ADDRESS", "https://github.com/ChiriacCasian/TeamCityBuildServer")
         }
         add {
+            param("JOURNEY_EXECUTOR_GIT_ADDRESS", "https://github.com/ChiriacCasian/pod-infra_v2")
+        }
+        add {
             param("GIT_USER", "ChiriacCasian")
         }
         add {
-            param("JOURNEY_EXECUTOR_GIT_ADDRESS", "https://github.com/ChiriacCasian/pod-infra_v2")
+            param("GIT_AUTH_TOKEN", "credentialsJSON:9b4689e5-3c42-4bfb-843e-7d0d1a023a38")
         }
     }
 }
