@@ -26,7 +26,6 @@ changeBuildType(RelativeId("WebpagesPlugin")) {
                     #!/usr/bin/env bash
                     set -e
                     echo "%journey.generator.address%"
-                    echo "%teamcity.data.path%/something"
                     cp target/WebpagesInTeamCityPlugin.zip "opt/teamcity/data/plugins"
                 """.trimIndent()
             }
