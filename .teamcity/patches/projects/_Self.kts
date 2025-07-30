@@ -21,7 +21,7 @@ changeProject(DslContext.projectId) {
             param("GIT_USER", "ChiriacCasian")
         }
         add {
-            param("GIT_AUTH_TOKEN", "credentialsJSON:9b4689e5-3c42-4bfb-843e-7d0d1a023a38")
+            password("GIT_AUTH_TOKEN", "credentialsJSON:f1f20dd4-912c-4977-ae90-c79dc6674b3e")
         }
     }
 }
