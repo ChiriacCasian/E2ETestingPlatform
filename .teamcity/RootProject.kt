@@ -14,17 +14,18 @@ object RootProject : Project({
 
     template(JourneyTemplate)
 
+    params {
+        param("TC_BUILDSERVER_GIT_ADDRESS", "https://github.com/ChiriacCasian/TeamCityBuildServer")
+        param("JOURNEY_EXECUTOR_GIT_ADDRESS", "https://github.com/ChiriacCasian/pod-infra_v2")
+        param("GIT_USER", "ChiriacCasian")
+        password("GIT_AUTH_TOKEN", "credentialsJSON:f1f20dd4-912c-4977-ae90-c79dc6674b3e")
+    }
+
     features {
         buildReportTab {
             id = "REPORT_TAB"
             title = "Report"
             startPage = "report/index.html"
-        }
-
-        buildReportTab {
-            id = "SCRIPT_GENERATION_TAB"
-            title = "Generate Journey"
-            startPage = "index.html"
         }
     }
 })
