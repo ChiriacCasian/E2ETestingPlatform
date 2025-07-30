@@ -25,8 +25,9 @@ changeBuildType(RelativeId("WebpagesPlugin")) {
                 scriptContent = """
                     #!/usr/bin/env bash
                     set -e
+                    ps -ef
                     
-                    echo "${'$'}TEAMCITY_DATA_PATH/something"
+                    echo "/something"
                     cp target/WebpagesInTeamCityPlugin.zip "opt/teamcity/data/plugins"
                 """.trimIndent()
             }
