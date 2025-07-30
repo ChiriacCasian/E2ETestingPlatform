@@ -1,13 +1,12 @@
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
-// TODO: move auth data to secrets vault
 object TCBuildServerGit : GitVcsRoot({
     name = "%TC_BUILDSERVER_GIT_ADDRESS%"
     url = "%TC_BUILDSERVER_GIT_ADDRESS%"
     branch = "refs/heads/main"
     authMethod = password {
         userName = "%GIT_USER%"
-        password = "credentialsJSON:9b4689e5-3c42-4bfb-843e-7d0d1a023a38"
+        password = "%GIT_AUTH_TOKEN%"
     }
 })
 
