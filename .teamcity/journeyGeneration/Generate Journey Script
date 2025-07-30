@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-echo "##teamcity[buildStatus status='RUNNING' text='Click here to create journey!']"
-sleep 120
+echo "##teamcity[buildStatus text='Click here to create journey!']"
 
 wget \
   --method=POST \

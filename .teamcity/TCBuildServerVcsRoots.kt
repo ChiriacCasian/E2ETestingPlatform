@@ -14,7 +14,6 @@ object TCBuildServerGit : GitVcsRoot({
 object JourneyExecutorPodInfraV2Git : GitVcsRoot({
     name = "%JOURNEY_EXECUTOR_GIT_ADDRESS%"
     url = "%JOURNEY_EXECUTOR_GIT_ADDRESS%"
-//    url = "https://github.com/ChiriacCasian/pod-infra_v2"
     branch = "refs/heads/master"
     authMethod = password {
         userName = "%GIT_USER%"
