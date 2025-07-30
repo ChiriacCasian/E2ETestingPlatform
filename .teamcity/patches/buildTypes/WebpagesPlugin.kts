@@ -26,7 +26,7 @@ changeBuildType(RelativeId("WebpagesPlugin")) {
                     #!/usr/bin/env bash
                     set -e
                     
-                    echo ${'$'}TEAMCITY_DATA_PATH
+                    echo "${'$'}TEAMCITY_DATA_PATH/something"
                     cp target/WebpagesInTeamCityPlugin.zip "${'$'}TEAMCITY_DATA_PATH/plugins"
                 """.trimIndent()
             }
