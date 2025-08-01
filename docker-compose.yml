@@ -1,0 +1,15 @@
+services:
+  teamcity-server:
+    image: jetbrains/teamcity-server:latest
+    ports:
+      - "8111:8111"                            # UI → http://localhost:8111
+    volumes:
+      - ./_tc_data:/data/teamcity_server/datadir        # DB, plugins, etc.
+      - ./.teamcity:/data/teamcity_server/datadir/config/projects/MyProject
+
+  teamcity-agent:
+    image: jetbrains/teamcity-agent:latest
+    depends_on:
+      - teamcity-server
+    environment:
+      - SERVER_URL=http://teamcity-server:8111

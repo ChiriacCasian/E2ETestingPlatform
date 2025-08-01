@@ -48,8 +48,4 @@ object JourneyGenerator : BuildType({
         swabra {
         }
     }
-
-    requirements {
-        contains("env.COMPATIBLE_JOURNEY_TYPES", "GENERATOR", "AGENT_REQUIREMENT")
-    }
 })
