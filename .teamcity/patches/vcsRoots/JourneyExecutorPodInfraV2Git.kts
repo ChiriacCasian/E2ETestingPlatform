@@ -29,7 +29,7 @@ changeVcsRoot(RelativeId("JourneyExecutorPodInfraV2Git")) {
     (this as GitVcsRoot).apply {
         authMethod = password {
             userName = "%GIT_USER%"
-            password = "credentialsJSON:d342a2d2-9a3a-4345-b0f1-2af347272a83"
+            password = "credentialsJSON:95b2436d-c42a-4714-b646-52db77b30b60"
         }
     }
 
