@@ -100,10 +100,9 @@ EOF
 echo $payload
 
 echo "##teamcity[buildStatus text='${JOURNEY_NAME}']"
-echo "Token length: ${#TC_AUTH_TOKEN}"
 
 curl -i -sS --fail-with-body \
-  -H "Authorization: Bearer ${TC_AUTH_TOKEN}" \
+  -H "Authorization: Bearer %TC_AUTH_TOKEN%" \
   -H "Content-Type: application/json" \
   -X POST \
   "${TEAMCITY_SERVER_URL}/app/rest/buildTypes" \
