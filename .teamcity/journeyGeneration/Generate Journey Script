@@ -6,7 +6,7 @@ max_attempts=40
 delay=10
 
 for ((attempt=1; attempt<=max_attempts; attempt++)); do
-  if wget --method=GET -qO- http://$CODEGEN_SERVER_URL/code \
+  if wget --method=GET -qO- http://${CODEGEN_SERVER_URL}/code \
        | jq -r '.code' > "${JOURNEY_NAME}_script.py"; then
     echo "Script generation succeeded"
     exit 0
