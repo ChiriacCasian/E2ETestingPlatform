@@ -15,7 +15,7 @@ changeProject(DslContext.projectId) {
             password("GIT_AUTH_TOKEN", "credentialsJSON:f1f20dd4-912c-4977-ae90-c79dc6674b3e")
         }
         update {
-            password("GIT_AUTH_TOKEN", "credentialsJSON:7a79e502-a391-4a72-944c-71062f33fe3c")
+            password("GIT_AUTH_TOKEN", "credentialsJSON:95b2436d-c42a-4714-b646-52db77b30b60")
         }
     }
 }
