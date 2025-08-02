@@ -6,7 +6,7 @@ max_attempts=40
 delay=10
 
 for ((attempt=1; attempt<=max_attempts; attempt++)); do
-  if wget --method=POST -qO- http://localhost:3002/code \
+  if wget --method=GET -qO- http://localhost:3002/code \
        | jq -r '.code' > "${JOURNEY_NAME}_script.py"; then
     echo "Download succeeded ✔︎"
     exit 0            # done
