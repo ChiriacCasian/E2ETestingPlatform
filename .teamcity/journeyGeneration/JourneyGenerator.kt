@@ -18,7 +18,7 @@ object JourneyGenerator : BuildType({
 
     params {
         /// we may want to split generators on type, for example WEB_GENERATOR, or ANDROID_GENERATOR, depending on what phone/emulator they have access to
-        param("env.COMPATIBLE_JOURNEY_TYPES", "GENERATOR")
+        param("CODEGEN_SERVER_URL", "host.docker.internal:3002")
         param("JOURNEY_TYPE", "WEB")
         param("env.JOURNEY_NAME", "Journey")
         /// TODO: move this token to secrets vault
