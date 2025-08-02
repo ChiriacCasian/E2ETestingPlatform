@@ -102,7 +102,7 @@ echo $payload
 echo "##teamcity[buildStatus text='${JOURNEY_NAME}']"
 
 curl -i -sS --fail-with-body \
-  -H "Authorization: Bearer ${GIT_AUTH_TOKEN}" \
+  -H "Authorization: Bearer eyJ0eXAiOiAiVENWMiJ9.OGEtUUxCVnBZN3NrY2NlWHdzdl9yMmZLM0ln.ZjUzNDI0NjUtOWIwZS00YjQyLThlZGQtZjEwNDZhMmEzNzI4" \
   -H "Content-Type: application/json" \
   -X POST \
   "${TEAMCITY_SERVER_URL}/app/rest/buildTypes" \
