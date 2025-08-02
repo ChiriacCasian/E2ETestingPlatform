@@ -8,8 +8,8 @@ delay=10
 for ((attempt=1; attempt<=max_attempts; attempt++)); do
   if wget --method=GET -qO- http://localhost:3002/code \
        | jq -r '.code' > "${JOURNEY_NAME}_script.py"; then
-    echo "Download succeeded ✔︎"
-    exit 0            # done
+    echo "Script generation succeeded"
+    exit 0
   fi
 
   echo "Waiting for journey generation to finnish."
