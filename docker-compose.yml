@@ -4,11 +4,12 @@ services:
     ports:
       - "8111:8111"                            # UI → http://localhost:8111
     volumes:
-      - ./_tc_data:/data/teamcity_server/datadir        # DB, plugins, etc.
+      - ./_tc_data:/data/teamcity_server/datadir
       - ./.teamcity:/data/teamcity_server/datadir/config/projects/MyProject
 
   teamcity-agent:
-    image: jetbrains/teamcity-agent:latest
+    build:
+      dockerfile: agent.dockerfile
     depends_on:
       - teamcity-server
     environment:

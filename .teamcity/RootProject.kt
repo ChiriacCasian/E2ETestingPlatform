@@ -15,6 +15,9 @@ object RootProject : Project({
     template(JourneyTemplate)
 
     params {
+
+
+
         param("TC_BUILDSERVER_GIT_ADDRESS", "https://github.com/ChiriacCasian/TeamCityBuildServer")
         param("JOURNEY_EXECUTOR_GIT_ADDRESS", "https://github.com/ChiriacCasian/pod-infra_v2")
         param("GIT_USER", "ChiriacCasian")
