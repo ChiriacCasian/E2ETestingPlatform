@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-journey_name=%dep.SecondProject_JourneyGenerator.env.JOURNEY_NAME%
-journey_type=%dep.SecondProject_JourneyGenerator.JOURNEY_TYPE%
+journey_name=%JOURNEY_NAME%
+journey_type=%JOURNEY_TYPE%
 device_uuid="R58N8104SRW"
 output_dir=%teamcity.build.checkoutDir%
 script_path="$output_dir/script/${journey_name}_script.py"

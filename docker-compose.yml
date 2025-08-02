@@ -12,5 +12,3 @@ services:
       dockerfile: agent.dockerfile
     depends_on:
       - teamcity-server
-    environment:
-      - SERVER_URL=http://teamcity-server:8111
