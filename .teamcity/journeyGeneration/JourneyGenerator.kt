@@ -22,7 +22,7 @@ object JourneyGenerator : BuildType({
         param("env.JOURNEY_TYPE", "WEB")
         param("env.JOURNEY_NAME", "Journey")
         /// TODO: move this token to secrets vault
-        param("env.GIT_PAT_TOKEN", "eyJ0eXAiOiAiVENWMiJ9.OGEtUUxCVnBZN3NrY2NlWHdzdl9yMmZLM0ln.ZjUzNDI0NjUtOWIwZS00YjQyLThlZGQtZjEwNDZhMmEzNzI4")
+//        param("env.GIT_PAT_TOKEN", "eyJ0eXAiOiAiVENWMiJ9.OGEtUUxCVnBZN3NrY2NlWHdzdl9yMmZLM0ln.ZjUzNDI0NjUtOWIwZS00YjQyLThlZGQtZjEwNDZhMmEzNzI4")
         param("env.TEAMCITY_SERVER_URL", "%teamcity.serverUrl%")
         /// MANUALLY get a project's id from settings General Project ID
         param("env.PROJECT_PATH_ID", "%teamcity.project.id%")
