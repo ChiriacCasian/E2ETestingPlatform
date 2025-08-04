@@ -16,7 +16,7 @@
 
 This project is intended to showcase how TeamCity can be used to create, schedule, run and interpret **e2e tests** (from now on referred to as **Journeys**) of any web or mobile-native application but also any Api, \ 
 and obtain valuable data at the end in the form of a concentrated report that provides data about every step of the test.
-
+![img.png](readmeResources/diagram.png)
 ## Features
 * Teamcity is used to provide the UI, scheduling, failure conditions, performance monitoring and many more ...
 * Teamcity [server](https://hub.docker.com/r/jetbrains/teamcity-server/tags) and the agents are completely dockerized, one host machine/cloud VM can host multiple tc agents
@@ -28,7 +28,7 @@ and obtain valuable data at the end in the form of a concentrated report that pr
 * [JourneyExecutor](https://github.com/ChiriacCasian/pod-infra_v2.git) contains the journey running and report generation logic (in kotlin DSL), it is added as a custom buildConfiguration and automatically packaged and provided to journeys on every commit \ 
 as a runnable, so it is straightforward and convenient to change the journey running logic  
 * All journeys implement the JourneyTemplate, easily extend journey logic/parameters/dependencies
-* Agents use custom image (paste here image link) with an env setup to enable running the journeys
+* Agents use custom [image](https://hub.docker.com/repository/docker/chiriaccasian123/teamcity-e2e-agent) with an env setup to enable running the journeys
 ---
 
 ### Journey Workflow
@@ -92,7 +92,7 @@ teamcity.web.header.Content-Security-Policy.adminUI.protectedValue=frame-src 'se
 Disable artifact domain isolation, or set [up custom url to serve the artifacts for increased security](https://www.jetbrains.com/help/teamcity/2025.07/teamcity-configuration-and-maintenance.html?Artifacts+Domain+Isolation#artifacts-domain-isolation).
 ![img_6.png](readmeResources/img_6.png)
 ### 2. Agents and Agents Host Machine
-Simply pull the docker image (paste here image link), configure parameters (according to docs) and run it in a container.  
+Simply pull the docker [image](https://hub.docker.com/repository/docker/chiriaccasian123/teamcity-e2e-agent), configure parameters (according to docs) and run it in a container.  
 *Host must be macOS (otherwise it will not be able to run iOS pods). If iOS journeys are not important the host can be any OS.*
 
 #### For Android / iOS agents, set up the agent's host machine:

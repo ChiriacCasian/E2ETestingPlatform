@@ -107,5 +107,3 @@ curl -i -sS --fail-with-body \
   -X POST \
   "${TEAMCITY_SERVER_URL}/app/rest/buildTypes" \
   -d "${payload}"
-
-#  eyJ0eXAiOiAiVENWMiJ9.SlJoaC1JQklISFluN1hsYXhlQk5JeS0xMHVk.OTljNzAwODItMDY2ZS00ZTczLWIyMDEtMjE1ZWNlMWVmOTk0

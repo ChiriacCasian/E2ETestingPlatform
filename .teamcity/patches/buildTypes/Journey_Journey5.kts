@@ -13,7 +13,7 @@ in the root project, and delete the patch script.
 create(DslContext.projectId, BuildType({
     templates(RelativeId("JourneyTemplate"))
     id("Journey_Journey5")
-    name = "Journey5"
+    name = "NetworkAndInternetMenuJourney"
 
     params {
         param("JOURNEY_NAME", "Journey5")
