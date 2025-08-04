@@ -5,6 +5,8 @@ import RootProject.vcsRoot
 import jetbrains.buildServer.configs.kotlin.BuildType
 import jetbrains.buildServer.configs.kotlin.buildFeatures.swabra
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
+
 
 object JourneyExecutor : BuildType( {
     name = "Journey Executor"
@@ -23,6 +25,12 @@ object JourneyExecutor : BuildType( {
             tasks = "shadowJar"
             useGradleWrapper = true
             buildFile   = "app/build.gradle.kts"
+        }
+    }
+
+    triggers {
+        vcs {
+
         }
     }
 

@@ -18,5 +18,5 @@ object JourneyExecutorPodInfraV2Git : GitVcsRoot({
         userName = "%GIT_USER%"
         password = "%GIT_AUTH_TOKEN%"
     }
-    branchSpec = "refs/heads/*" /// this is the vcs trigger
+    branchSpec = "refs/heads/*" /// this is for the vcs trigger (only trigger if on this branch)
 })

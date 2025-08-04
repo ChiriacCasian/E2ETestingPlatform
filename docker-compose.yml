@@ -2,7 +2,7 @@ services:
   teamcity-server:
     image: jetbrains/teamcity-server:latest
     ports:
-      - "8111:8111"                            # UI → http://localhost:8111
+      - "8111:8111"
     volumes:
       - ./_tc_data:/data/teamcity_server/datadir
       - ./.teamcity:/data/teamcity_server/datadir/config/projects/MyProject

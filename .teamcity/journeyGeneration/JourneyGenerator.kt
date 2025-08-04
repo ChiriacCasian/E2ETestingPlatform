@@ -23,7 +23,6 @@ object JourneyGenerator : BuildType({
         param("env.JOURNEY_TYPE", "WEB")
         param("env.JOURNEY_NAME", "Journey")
         param("env.TEAMCITY_SERVER_URL", "%teamcity.serverUrl%")
-        /// MANUALLY get a project's id from settings General Project ID
         param("env.PROJECT_PATH_ID", "%teamcity.project.id%")
     }
 
