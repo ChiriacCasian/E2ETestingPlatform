@@ -9,7 +9,7 @@ import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 
 object JourneyExecutor : BuildType( {
-    name = "Journey Executor"
+    name = "JourneyExecutor"
     description = "Latest artifact of this build is used to run Journeys on agents"
 
     artifactRules= """
