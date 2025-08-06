@@ -14,7 +14,7 @@
 
 ## TeamCityBuildServer
 
-This project is intended to showcase how TeamCity can be used to create, schedule, run and interpret **e2e tests** (from now on referred to as **Journeys**) of any web or mobile-native application but also any Api, \ 
+This project is intended to showcase how TeamCity can be used to create, schedule, run and interpret **e2e tests** (from now on referred to as **Journeys**) of any web or mobile-native application but also any Api, 
 and obtain valuable data at the end in the form of a concentrated report that provides data about every step of the test.
 ## Video Demo :
 [![img.png](readmeResources/diagram.png)](https://youtu.be/oVDdIOgKE9s)
