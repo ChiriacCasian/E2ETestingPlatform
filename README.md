@@ -16,7 +16,8 @@
 
 This project is intended to showcase how TeamCity can be used to create, schedule, run and interpret **e2e tests** (from now on referred to as **Journeys**) of any web or mobile-native application but also any Api, \ 
 and obtain valuable data at the end in the form of a concentrated report that provides data about every step of the test.
-![img.png](readmeResources/diagram.png)
+## Video Demo :
+[![img.png](readmeResources/diagram.png)](https://youtu.be/oVDdIOgKE9s)
 ## Features
 * Teamcity is used to provide the UI, scheduling, failure conditions, performance monitoring and many more ...
 * Teamcity [server](https://hub.docker.com/r/jetbrains/teamcity-server/tags) and the agents are completely dockerized, one host machine/cloud VM can host multiple tc agents
