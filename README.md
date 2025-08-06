@@ -16,7 +16,7 @@
 
 This project is intended to showcase how TeamCity can be used to create, schedule, run and interpret **e2e tests** (from now on referred to as **Journeys**) of any web or mobile-native application but also any Api, 
 and obtain valuable data at the end in the form of a concentrated report that provides data about every step of the test.
-## Video Demo :
+## Video Demo : (for a very quick showcase of the core platform functionality, skip to [16:49](https://youtu.be/oVDdIOgKE9s?t=1010))
 [![img.png](readmeResources/diagram.png)](https://youtu.be/oVDdIOgKE9s)
 ## Features
 * Teamcity is used to provide the UI, scheduling, failure conditions, performance monitoring and many more ...
